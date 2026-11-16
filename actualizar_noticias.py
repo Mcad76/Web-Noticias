@@ -30,6 +30,7 @@ DATOS = BASE / 'datos'
 IMGS = BASE / 'imagenes'
 JS = BASE / 'js' / 'news-data.js'
 HISTORICO = DATOS / 'historico.json'
+MANUALES = DATOS / 'noticias-manuales.json'   # se edita directamente en GitHub
 LOG = BASE / 'actualizar_noticias.log'
 
 ELP = 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/'
@@ -338,6 +339,46 @@ def cargar_historico():
     return {'actualizado': '', 'noticias': [], 'top': []}
 
 
+def cargar_manuales():
+    """Noticias escritas a mano en datos/noticias-manuales.json (se editan en GitHub)."""
+    if not MANUALES.exists():
+        return []
+    try:
+        raw = json.loads(MANUALES.read_text(encoding='utf-8'))
+    except Exception as e:
+        log(f'! noticias-manuales.json corrupto, se ignoran: {e}')
+        return []
+    secciones_validas = {s['id'] for s in SECCIONES}
+    salida = []
+    for m in raw.get('noticias', []):
+        titulo = limpiar(m.get('titulo', ''), 180)
+        if not titulo:
+            continue
+        sec = m.get('sec', 'sociedad')
+        if sec not in secciones_validas:
+            sec = 'sociedad'
+        idn = m.get('id') or ('m-' + hashlib.md5(titulo.encode('utf-8')).hexdigest()[:11])
+        cuerpo = [limpiar(p, 700) for p in m.get('cuerpo', [])]
+        cuerpo = [p for p in cuerpo if p]
+        if not cuerpo:
+            cuerpo = [limpiar(m.get('entradilla', ''), 240) or titulo]
+        salida.append({
+            'id': idn,
+            'sec': sec,
+            'slot': 0,
+            'titulo': titulo,
+            'entradilla': limpiar(m.get('entradilla', ''), 240) or titulo,
+            'cuerpo': cuerpo[:3],
+            'autor': limpiar(m.get('autor', ''), 60) or 'Redacción',
+            'fecha': m.get('fecha') or datetime.now(timezone.utc).isoformat(),
+            'image': m.get('image', ''),
+            'link': m.get('link', ''),
+            'medio': limpiar(m.get('medio', ''), 60) or 'Redacción propia',
+            'viral': 0,
+        })
+    return salida
+
+
 def guardar_historico(datos):
     DATOS.mkdir(parents=True, exist_ok=True)
     tmp = HISTORICO.with_suffix('.tmp')
@@ -408,6 +449,14 @@ def main():
 
     hist = cargar_historico()
     noticias = hist.get('noticias', [])
+
+    # Noticias escritas a mano en GitHub: se reinsertan en cada ejecución para
+    # que no se pierdan y siempre reflejen la última edición del JSON.
+    manuales = cargar_manuales()
+    ids_manuales = {n['id'] for n in manuales}
+    noticias = [n for n in noticias if n['id'] not in ids_manuales]
+    noticias.extend(manuales)
+
     corte = (ahora - timedelta(days=DIAS_HISTORICO)).isoformat()
     noticias = [n for n in noticias if n.get('fecha', '') >= corte]
     existentes = {n['id']: n for n in noticias}

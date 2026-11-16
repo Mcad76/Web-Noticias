@@ -1,7 +1,8 @@
 # Tu Vecina Cotilla — Portal de noticias
 
-Diario web de actualidad con estilo de prensa española, alojado en
-`/storage/emulated/0/Download/Opencode/portal-noticias`.
+Diario web de actualidad con estilo de prensa española. Desarrollado y
+actualizado íntegramente desde GitHub:
+`https://github.com/Mcad76/Web-Noticias-` → `https://Mcad76.github.io/Web-Noticias-/`.
 
 ## Noticias reales, actualizadas cada día
 
@@ -34,44 +35,86 @@ El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
   texto «PON AQUÍ TU PUBLICIDAD».
 - Archivo con filtro, buscador y fecha real de publicación.
 
-## Actualización automática
+## Actualización automática (todo en GitHub, sin Termux)
 
-Instalada mediante `cron` de Termux (cronie), a las **07:30** todos los días:
+El portal ya **no depende del móvil**. Un GitHub Action hace el trabajo en la nube:
 
+- `.github/workflows/actualizar-noticias.yml` ejecuta `actualizar_noticias.py`
+  cada día a las **07:30 UTC** y también bajo demanda.
+- El Action instala `Pillow` desde `requirements.txt`, descarga las noticias y
+  hace `commit` de `js/news-data.js`, `datos/historico.json` y `imagenes/`.
+- Para actualizar **cuando quieras**: entra en la pestaña **Actions** del repo,
+  elige *Actualizar noticias* y pulsa **Run workflow**.
+- Para publicar la web: **Settings → Pages → Source: Deploy from a branch →
+  main → /(root) → Save**. La web queda en
+  `https://Mcad76.github.io/Web-Noticias-/`.
+
+> El repo debe ser **público** para usar GitHub Pages en el plan gratis.
+> GitHub puede retrasar unos minutos las ejecuciones programadas; el botón
+> manual siempre funciona al instante.
+
+### Añadir o editar noticias a mano desde GitHub
+
+No edites `js/news-data.js` (se regenera solo). Edita
+`datos/noticias-manuales.json` desde el editor web de GitHub y el siguiente
+Action lo incorporará:
+
+```json
+{
+  "noticias": [
+    {
+      "id": "mi-noticia-1",
+      "sec": "sociedad",
+      "titulo": "Titular de la noticia",
+      "entradilla": "Resumen corto que aparece en la tarjeta.",
+      "cuerpo": ["Primer párrafo...", "Segundo párrafo..."],
+      "autor": "Redacción",
+      "fecha": "2026-11-16T09:00:00+00:00",
+      "image": "imagenes/nombre.jpg",
+      "link": "https://...",
+      "medio": "Tu Vecina Cotilla"
+    }
+  ]
+}
 ```
-30 7 * * * /data/data/com.termux/files/home/bin/actualizar-vecina
-```
 
-- Para reinstalar el trabajo: `bash programar_actualizacion.sh`
-- Para actualizar ahora mismo: `bash actualizar_diario.sh`
-- Para ver el log: `tail -f actualizar_noticias.log`
-- Para ver los trabajos: `crontab -l`
-
-> Como Android cierra procesos en segundo plano, el cron puede retrasarse si el
-> teléfono lleva mucho tiempo apagado o en reposo profundo. Al abrir Termux se
-> pone al día en el siguiente disparo; también puedes ejecutarlo a mano.
+`id` es opcional (si falta se genera a partir del titular). `sec` debe ser una
+de: `industria`, `politica`, `deportes`, `sociedad`, `pesca`, `tecnologia`,
+`economia`, `cultura`. `fecha` en formato ISO con zona horaria.
 
 Si prefieres otro proveedor de noticias, edita el diccionario `FUENTES` de
-`actualizar_noticias.py` (puedes mezclar varios feeds por sección).
+`actualizar_noticias.py` (puedes mezclar varios feeds por sección). Para subir
+cualquier cambio al repo: edítalo en GitHub y haz commit, o desde Termux con
+`git add . && git commit -m "..." && git push`.
 
 ## Estructura
 
 ```
 portal-noticias/
-├── index.html                 Estructura de la página
-├── css/styles.css             Diseño responsive
+├── index.html                    Estructura de la página
+├── css/styles.css                Diseño responsive
 ├── js/
-│   ├── news-data.js           GENERADO: noticias reales + secciones
-│   └── app.js                 Portada, secciones, archivo, modal y fuentes
-├── actualizar_noticias.py     Descarga RSS, imágenes y genera news-data.js
-├── actualizar_diario.sh       Envuelve la ejecución diaria
-├── programar_actualizacion.sh Instala el cron
-├── datos/historico.json       Archivo acumulado (generado)
-├── imagenes/                  Fotos reales de las noticias (generado)
-└── actualizar_noticias.log    Registro de actualizaciones
+│   ├── news-data.js              GENERADO: noticias reales + secciones
+│   └── app.js                    Portada, secciones, archivo, modal y fuentes
+├── .github/workflows/
+│   └── actualizar-noticias.yml   GitHub Action: actualiza y hace commit
+├── .nojekyll                     Evita que Pages procese el sitio con Jekyll
+├── requirements.txt              Dependencias del Action (Pillow)
+├── actualizar_noticias.py        Descarga RSS, imágenes y genera news-data.js
+├── datos/
+│   ├── historico.json            Archivo acumulado (generado)
+│   └── noticias-manuales.json    Noticias escritas a mano en GitHub
+├── imagenes/                     Fotos reales de las noticias (generado)
+├── actualizar_diario.sh          (legado) ejecución manual local
+├── programar_actualizacion.sh    (legado) instalaba el cron en Termux
+└── actualizar_noticias.log       Registro de actualizaciones (no se sube)
 ```
 
 ## Cómo verlo
+
+Ya publicado: **`https://Mcad76.github.io/Web-Noticias-/`**
+
+Solo para probar en local antes de subir cambios:
 
 ```bash
 cd /storage/emulated/0/Download/Opencode/portal-noticias

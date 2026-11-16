@@ -1,0 +1,52 @@
+name: Actualizar noticias
+
+# Se ejecuta solo en GitHub (nada de cron en el móvil).
+on:
+  schedule:
+    # Todos los días a las 07:30 UTC (= 08:30 en España en invierno, 09:30 en verano).
+    # GitHub puede retrasar un poco la ejecución; para forzarla usa el botón manual.
+    - cron: '30 7 * * *'
+  # Botón "Run workflow" en la pestaña Actions, para actualizar cuando quieras.
+  workflow_dispatch:
+
+permissions:
+  contents: write   # necesario para que el bot pueda hacer commit de las noticias
+
+concurrency:
+  group: actualizar-noticias
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Descargar noticias y generar archivos
+        run: python actualizar_noticias.py
+
+      - name: Guardar los cambios en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/news-data.js datos/historico.json imagenes/
+          if git diff --cached --quiet; then
+            echo "No hay noticias nuevas; no se hace commit."
+          else
+            git commit -m "Actualizar noticias $(date -u +%Y-%m-%d)"
+            git push
+          fi
