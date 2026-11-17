@@ -34,7 +34,10 @@ HISTORICO = DATOS / 'historico.json'
 MANUALES = DATOS / 'noticias-manuales.json'   # se edita directamente en GitHub
 LOG = BASE / 'actualizar_noticias.log'
 
-BASE_URL = 'https://mcad76.github.io/Web-Noticias-/'
+BASE_URL = 'https://mcad76.github.io/Web-Noticias/'
+# Enlaces a tus canales propios. Rellénalos cuando crees el canal de Telegram
+# o el grupo de WhatsApp; mientras estén vacíos no se muestra el bloque.
+CANALES = {'telegram': '', 'whatsapp': ''}
 ELP = 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/'
 UA = 'Mozilla/5.0 (compatible; TuVecinaCotilla/2.0; +RSS)'
 TIMEOUT = 20
@@ -573,6 +576,15 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
 .entradilla{font-size:20px;font-weight:700;line-height:1.5;border-left:4px solid #e30613;padding-left:16px}
 .cuerpo p{font-size:19px;line-height:1.85;margin:0 0 22px}
 .fuente,.volver{display:inline-block;margin:16px 12px 0 0;color:#b80510;font-weight:700}
+.compartir{margin:12px 0 28px;display:flex;flex-wrap:wrap;gap:8px}
+.compartir a{display:inline-block;padding:8px 14px;border-radius:4px;color:#fff;font:700 13px Arial;text-decoration:none}
+.compartir .wa{background:#25d366;color:#111}.compartir .tg{background:#229ed9}
+.compartir .x{background:#111}.compartir .fb{background:#1877f2}
+.relacionadas{margin-top:34px;border-top:3px solid #111;padding-top:16px}
+.relacionadas h2{font:900 22px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;margin:0 0 10px}
+.relacionadas a{display:block;padding:9px 0;border-bottom:1px solid #ddd;color:#b80510;font-weight:700;text-decoration:none}
+.canales{margin-top:26px;padding:16px;background:#fff3f3;border:1px solid #f3c2c2}
+.canales a{margin-right:14px;color:#b80510;font-weight:700}
 .pie{max-width:900px;margin:0 auto 40px;padding:0 20px;color:#666;font-size:13px}
 </style>'''
 
@@ -591,6 +603,15 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
         info_sec = next((s for s in SECCIONES if s['id'] == n['sec']), None)
         nombre_sec = info_sec['nombre'] if info_sec else n['sec']
         color = info_sec['color'] if info_sec else '#e30613'
+
+        # Enlazado interno: 3 noticias relacionadas de la misma web
+        mismos = [x for x in historico['noticias']
+                  if x['id'] != n['id'] and x['sec'] == n['sec']
+                  and x.get('region', 'nacional') == n.get('region', 'nacional')]
+        if len(mismos) < 3:
+            mismos += [x for x in historico['noticias']
+                       if x['id'] != n['id'] and x['sec'] == n['sec'] and x not in mismos]
+        relacionadas = mismos[:3]
 
         ld = {
             '@context': 'https://schema.org',
@@ -624,7 +645,14 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
         if img_url:
             pagina.append(f'  <meta property="og:image" content="{img_url}">')
         pagina += [
-            f'  <meta name="twitter:card" content="summary_large_image">',
+            '  <meta property="og:site_name" content="Tu Vecina Cotilla">',
+            '  <meta name="twitter:card" content="summary_large_image">',
+            f'  <meta name="twitter:title" content="{e(titulo, quote=True)}">',
+            f'  <meta name="twitter:description" content="{e(descripcion, quote=True)}">',
+        ]
+        if img_url:
+            pagina.append(f'  <meta name="twitter:image" content="{img_url}">')
+        pagina += [
             '  <script type="application/ld+json">' + ld_json + '</script>',
             '  <link rel="stylesheet" href="../css/styles.css">',
             estilos,
@@ -646,6 +674,40 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
             pagina.append(
                 f'    <a class="fuente" href="{e(n["link"], quote=True)}" target="_blank" '
                 f'rel="noopener noreferrer">Leer la noticia original en {e(medio)} ↗</a>')
+
+        # Botones para compartir (sin scripts de terceros)
+        u = quote(url, safe='')
+        t = e(titulo, quote=True)
+        pagina += [
+            '    <div class="compartir">',
+            f'      <a class="wa" href="https://api.whatsapp.com/send?text={t}%20%20{u}" target="_blank" rel="noopener noreferrer">WhatsApp</a>',
+            f'      <a class="tg" href="https://t.me/share/url?url={u}&text={t}" target="_blank" rel="noopener noreferrer">Telegram</a>',
+            f'      <a class="x" href="https://twitter.com/intent/tweet?text={t}&url={u}" target="_blank" rel="noopener noreferrer">X</a>',
+            f'      <a class="fb" href="https://www.facebook.com/sharer.php?u={u}" target="_blank" rel="noopener noreferrer">Facebook</a>',
+            '    </div>',
+        ]
+
+        enlaces_canales = []
+        if CANALES.get('telegram'):
+            enlaces_canales.append(
+                f'<a href="{CANALES["telegram"]}" target="_blank" rel="noopener noreferrer">Telegram</a>')
+        if CANALES.get('whatsapp'):
+            enlaces_canales.append(
+                f'<a href="{CANALES["whatsapp"]}" target="_blank" rel="noopener noreferrer">WhatsApp</a>')
+        if enlaces_canales:
+            pagina.append('    <div class="canales">Síguenos en nuestros canales: ' +
+                          ''.join(enlaces_canales) + '</div>')
+
+        if relacionadas:
+            pagina += [
+                '    <div class="relacionadas">',
+                f'      <h2>También en {e(nombre_sec)}</h2>',
+            ]
+            for r in relacionadas:
+                pagina.append(
+                    f'      <a href="{url_para(r)}">{e(r["titulo"])}</a>')
+            pagina.append('    </div>')
+
         pagina += [
             '    <a class="volver" href="../index.html">← Volver a la portada</a>',
             '  </article>',

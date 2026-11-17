@@ -2,7 +2,7 @@
 
 Diario web de actualidad con estilo de prensa española. Desarrollado y
 actualizado íntegramente desde GitHub:
-`https://github.com/Mcad76/Web-Noticias-` → `https://Mcad76.github.io/Web-Noticias-/`.
+`https://github.com/Mcad76/Web-Noticias` → `https://mcad76.github.io/Web-Noticias/`.
 
 ## Noticias reales, actualizadas cada día
 
@@ -52,7 +52,7 @@ El portal ya **no depende del móvil**. Un GitHub Action hace el trabajo en la n
   elige *Actualizar noticias* y pulsa **Run workflow**.
 - Para publicar la web: **Settings → Pages → Source: Deploy from a branch →
   main → /(root) → Save**. La web queda en
-  `https://Mcad76.github.io/Web-Noticias-/`.
+  `https://mcad76.github.io/Web-Noticias/`.
 
 > El repo debe ser **público** para usar GitHub Pages en el plan gratis.
 > GitHub puede retrasar unos minutos las ejecuciones programadas; el botón
@@ -123,19 +123,29 @@ portal-noticias/
 - Cada página lleva `<title>` y `<meta description>` únicos, un solo `<h1>`,
   `rel="canonical"`, Open Graph y un bloque JSON-LD `NewsArticle` con autor,
   fecha e imagen.
-- `sitemap.xml` incluye la portada y las 674 noticias; `robots.txt` apunta al
+- `sitemap.xml` incluye la portada y todas las noticias; `robots.txt` apunta al
   sitemap. Regístralo en **Google Search Console** para acelerar la indexación.
+- Al final de cada noticia hay **3 enlaces internos** a artículos relacionados
+  de la misma sección y comunidad, y botones ligeros para compartir en
+  **WhatsApp, Telegram, X y Facebook** (sin scripts de terceros).
+- Metadatos Open Graph y Twitter completos para que las tarjetas al compartir
+  muestren foto y titular.
+- El repositorio ya se llama `Web-Noticias` (sin el guion final), así que la URL
+  pública es `https://mcad76.github.io/Web-Noticias/`.
 
-### Pendiente de decidir (requiere tu cuenta de GitHub)
+### Pendiente de tu parte
 
-- **Dominio propio**: para usar un `.es`/`.com` hay que comprarlo y añadir un
-  `CNAME` en la raíz del repo + configurar el dominio en Settings → Pages.
-- **Renombrar el repo** `Web-Noticias-` → `Web-Noticias` quitaría el guion final
-  de la URL, pero cambia la dirección pública y rompe enlaces antiguos.
+- **Dominio propio**: hay que comprarlo y añadir un `CNAME` en la raíz del repo
+  + configurarlo en Settings → Pages.
+- **Canales de difusión**: crea el canal de Telegram/grupo de WhatsApp y pon sus
+  enlaces en el diccionario `CANALES` de `actualizar_noticias.py`; mientras
+  estén vacíos no se muestra el bloque «Síguenos».
+- **Search Console**: registrarla y enviar el `sitemap.xml` (requiere tu cuenta
+  de Google).
 
 ## Cómo verlo
 
-Ya publicado: **`https://Mcad76.github.io/Web-Noticias-/`**
+Ya publicado: **`https://mcad76.github.io/Web-Noticias/`**
 
 Solo para probar en local antes de subir cambios:
 
