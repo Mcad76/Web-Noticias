@@ -1,6 +1,762 @@
 {
-  "actualizado": "2026-11-16T18:36:46.491170+00:00",
+  "actualizado": "2026-11-17T08:40:01.444515+00:00",
   "noticias": [
+    {
+      "id": "n-ea0f1f0ba8b",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "Renfe pide a los viajeros que busquen alternativas a Cercanías y Rodalies por el incumplimiento de los servicios mínimos en la huelga del ferrocarril",
+      "entradilla": "La protesta sindical en favor de mayores medidas de seguridad para el tren colapsa líneas en Madrid y Barcelona, y deja suspendidas 90 salidas en la alta velocidad, donde también se registran demoras",
+      "cuerpo": [
+        "Nuevo día de cancelaciones masivas y demoras en el ferrocarril en todo el país por una huelga de 24 horas que comenzó a medianoche de este martes. Más de 1,5 millones de viajeros habituales están viendo expuesto su habitual modo de transporte y desde primera hora se da un enfrentamiento entre Renfe y los sindicatos por lo que la operadora denuncia como incumplimiento de los servicios mínimos en Cercanías de Madrid y Rodalies de Cataluña, los dos principales núcleos ferroviarios del país. La mayor parte de las líneas están severamente afectadas, ante lo que Renfe recomienda la búsqueda de medios de transporte alternativos. Las fuerzas sindicales, entre ellas la de maquinistas SEMAF y las…"
+      ],
+      "autor": "Javier Magariño Fernández",
+      "fecha": "2026-11-17T08:37:27+00:00",
+      "image": "imagenes/n-ea0f1f0ba8b.jpg",
+      "link": "https://elpais.com/economia/2026-11-17/mas-de-15-millones-de-viajeros-en-tren-vuelven-a-estar-pendientes-de-24-horas-de-paro-sindical.html",
+      "medio": "elpais.com",
+      "viral": 0.5535
+    },
+    {
+      "id": "n-1c70566cde8",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "La tensión del mercado provoca una caída de la venta de viviendas del 13,4% en septiembre",
+      "entradilla": "En el noveno mes del año se firmaron 54.548 operaciones y en lo que va de año la caída acumulada se acerca al 4%, según los datos del INE",
+      "cuerpo": [
+        "El mercado inmobiliario rebajó sus registros en septiembre, un mes en el que se llevaron a cabo 54.548 compraventas. Se trata de una cifra que se encuentra un 13,4% por debajo del total de operaciones que se produjeron en el mismo mes del año pasado (63.018). Es también un resultado inferior al que se dio en septiembre de 2024 (61.472), lo que evidencia cierta contracción del mercado en la salida del verano, un periodo en el que tradicionalmente la actividad repunta tras los meses centrales del periodo estival. Pese a que en septiembre se dieron 5.229 firmas más que en agosto, un 10,6%, se trata de una subida inferior a la que se produjo en el mismo momento de 2025 (32%), según los datos…"
+      ],
+      "autor": "Gorka R. Pérez",
+      "fecha": "2026-11-17T08:18:24+00:00",
+      "image": "imagenes/n-1c70566cde8.jpg",
+      "link": "https://elpais.com/economia/vivienda/2026-11-17/la-tension-del-mercado-provoca-una-caida-de-la-venta-de-viviendas-del-134-en-septiembre.html",
+      "medio": "elpais.com",
+      "viral": 0.5058
+    },
+    {
+      "id": "n-a75ff6e0199",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "PP y Vox disparan la caza: ayudas para cartuchos y cotos, cazadores como científicos, licencias gratis y plan para matar lobos",
+      "entradilla": "Los gobiernos autonómicos con coalición de derechas aumentan las subvenciones al sector y aventuran un respaldo sin precedentes si logran la mayoría en el Congreso",
+      "cuerpo": [
+        "Los gobiernos autonómicos de PP y Vox (Andalucía, Aragón, Extremadura y Castilla y León) están incrementando las partidas para la caza y creando nuevas líneas: subvenciones para cartuchos, licencias y tasas gratuitas, dinero para que los propios cazadores realicen censos científicos de las especies, programas para llevar la caza a los colegios, ayudas para los cotos de caza y las federaciones… Ambos partidos llevan en su programa un apoyo explícito al sector y el PP incluye un plan para volver a matar lobos, como se hacía hasta 2021 . Estas pistas aventuran un respaldo sin precedentes si logran la mayoría en el Congreso, frente a las críticas de los ecologistas."
+      ],
+      "autor": "Miguel Ángel Medina Rodríguez",
+      "fecha": "2026-11-17T08:08:20+00:00",
+      "image": "imagenes/n-a75ff6e0199.jpg",
+      "link": "https://elpais.com/clima-y-medio-ambiente/2026-11-17/pp-y-vox-dan-alas-a-la-caza-ayudas-para-cartuchos-y-cotos-cazadores-como-cientificos-licencias-gratis-y-plan-para-matar-lobos.html",
+      "medio": "elpais.com",
+      "viral": 0.5048
+    },
+    {
+      "id": "n-d670fc3398d",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "Vodafone España consolida su recuperación y encadena cuatro trimestres de crecimiento",
+      "entradilla": "Zegona, propietaria de la operadora, dispara sus pérdidas a los 108,6 millones por los gastos financieros y los bonus de los directivos",
+      "cuerpo": [
+        "Zegona Communications, propietaria de Vodafone España, registró unas pérdidas netas de 108,6 millones de euros en el primer semestre de su ejercicio fiscal 2027, comprendido entre abril y septiembre de 2026, frente a los números rojos de 28,2 millones del mismo periodo del año anterior. El resultado contrasta con la evolución del negocio de su principal y único activo operativo, Vodafone España, que ha consolidado su recuperación comercial con cuatro trimestres consecutivos de crecimiento de los ingresos y una mejora de sus principales indicadores de rentabilidad y generación de caja. La matriz británica, que presentó sus cuentas este martes a la Bolsa de Londres, consiguió además reducir…"
+      ],
+      "autor": "Ramón Muñoz Moya",
+      "fecha": "2026-11-17T07:27:05+00:00",
+      "image": "imagenes/n-d670fc3398d.jpg",
+      "link": "https://cincodias.elpais.com/companias/2026-11-17/vodafone-espana-consolida-su-recuperacion-y-encadena-cuatro-trimestres-de-crecimiento.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.5005
+    },
+    {
+      "id": "n-c6c8d7ee43f",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "Un medio suizo desvela que la falsa médica gallega ejerció como farmacéutica sin título en ese país",
+      "entradilla": "Europol dictó una orden de arresto contra Andrea Sánchez, que tiene tres condenas y está a la espera de un cuarto juicio en Lugo",
+      "cuerpo": [
+        "Europol dictó una orden de arresto contra Andrea Sánchez, que tiene tres condenas y está a la espera de un cuarto juicio en Lugo"
+      ],
+      "autor": "Toni Longueira",
+      "fecha": "2026-11-17T05:00:00+01:00",
+      "image": "imagenes/n-c6c8d7ee43f.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/medio-suizo-desvela-falsa-medica-gallega-ejercio-farmaceutica-titulo-pais/00031794858140121872381.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4789
+    },
+    {
+      "id": "n-15748e96f0a",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "San Vicente de Leira recupera la conexión por carretera tras 24 horas incomunicado",
+      "entradilla": "El lunes por la mañana quedó reabierta la pista municipal, el otro acceso al pueblo. La reconstrucción del puente que colapsó por las fuertes lluvias se demorará al menos tres meses",
+      "cuerpo": [
+        "El lunes por la mañana quedó reabierta la pista municipal, el otro acceso al pueblo. La reconstrucción del puente que colapsó por las fuertes lluvias se demorará al menos tres meses"
+      ],
+      "autor": "maría cobas / Miguel ascón",
+      "fecha": "2026-11-17T05:00:00+01:00",
+      "image": "imagenes/n-15748e96f0a.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/17/san-vicente-recupera-conexion-carretera-tras-24-horas-incomunicado/0003_202611G17P13991.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4789
+    },
+    {
+      "id": "n-546e1311b07",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "A tecnoloxía ao servizo das aulas: a rede Abalar une a familias e centros",
+      "entradilla": "Un foro analizou os avances e os retos futuros do ensino dixital en Galicia",
+      "cuerpo": [
+        "Un foro analizou os avances e os retos futuros do ensino dixital en Galicia"
+      ],
+      "autor": "M. Meizoso",
+      "fecha": "2026-11-17T05:00:00+01:00",
+      "image": "imagenes/n-546e1311b07.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/17/span-langgl-tecnoloxia-ao-servizo-das-aulas-rede-abalar-une-familias-centros-span/0003_202611G17P14993.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4789
+    },
+    {
+      "id": "n-5b58b7c1985",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "Así será el control de los trenes tras el fiasco en las órdenes a los maquinistas en el accidente de Urda",
+      "entradilla": "La Agencia Estatal de Seguridad recomienda aclarar las responsabilidades de cada profesional en los CRC y realizar dobles procesos de validación de las consignas que se dan a los conductores",
+      "cuerpo": [
+        "La Agencia Estatal de Seguridad recomienda aclarar las responsabilidades de cada profesional en los CRC y realizar dobles procesos de validación de las consignas que se dan a los conductores"
+      ],
+      "autor": "pablo gonzález",
+      "fecha": "2026-11-17T05:00:00+01:00",
+      "image": "imagenes/n-5b58b7c1985.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/17/verificacion-control-trenes/0003_202611G17P10991.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.5246
+    },
+    {
+      "id": "n-2e776377ae7",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "El Gobierno eleva las sanciones a las empresas que oculten información contractual o salarial a sus empleados",
+      "entradilla": "El Consejo de Ministros aprueba este martes un decreto-ley con varias medidas de índole laboral impulsadas por el Ministerio de Trabajo y que exigen convalidación en la Diputación Permanente",
+      "cuerpo": [
+        "El Consejo de Ministros de este martes no solo aprueba la subida del salario mínimo interprofesional (SMI) a 1.286 euros brutos en 14 pagas , un 5,3% más que los 1.221 euros que rigen actualmente. El Gobierno aprobará otras normas de carácter laboral, contenidas en un gran decreto-ley impulsado por el Ministerio de Trabajo y que espera que quede refrendado posteriormente en la Diputación Permanente, según indican fuentes gubernamentales. Entre otras novedades, el texto eleva las sanciones a las empresas que no aporten la suficiente información contractual y salarial a los trabajadores que lo pidan. Y refuerza la transparencia salarial en las empresas, intentando cumplir una directiva…"
+      ],
+      "autor": "Emilio Sánchez Hidalgo",
+      "fecha": "2026-11-17T04:45:01+00:00",
+      "image": "imagenes/n-2e776377ae7.jpg",
+      "link": "https://elpais.com/economia/2026-11-17/el-gobierno-eleva-las-sanciones-a-las-empresas-que-oculten-informacion-contractual-o-salarial-a-sus-empleados.html",
+      "medio": "elpais.com",
+      "viral": 0.5293
+    },
+    {
+      "id": "n-0a1c8d65fe7",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "150 años conectando el mundo: del primer cable de cobre a las redes 5G avanzadas",
+      "entradilla": "La soberanía tecnológica europea exige infraestructuras fiables, y Ericsson, que cumple siglo y medio, quiere liderarlas desde Madrid",
+      "cuerpo": [
+        "Cada gran revolución en la historia de la humanidad no comenzó con una máquina, sino con una nueva forma de conectar ideas, personas y comunidades. Cuando la invención de la imprenta democratizó el conocimiento en el siglo XV, la distancia cultural entre los países comenzó a estrecharse. Siglos después, la llegada de la navegación a vapor y el ferrocarril redujo las semanas de viaje a días, vertebrando economías y transformando para siempre la geografía humana."
+      ],
+      "autor": "Juan Olivera",
+      "fecha": "2026-11-17T04:40:00+00:00",
+      "image": "imagenes/n-0a1c8d65fe7.jpg",
+      "link": "https://cincodias.elpais.com/opinion/2026-11-17/150-anos-conectando-el-mundo-del-primer-cable-de-cobre-a-las-redes-5g-avanzadas.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4831
+    },
+    {
+      "id": "n-fad1f69439d",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "La concentración bancaria británica llegará, pero sin prisas",
+      "entradilla": "Metro Bank ofrece depósitos baratos y escala, pero sus sucursales y la regulación complican una fusión",
+      "cuerpo": [
+        "El baile de la concentración bancaria británica vuelve a ponerse en marcha. Metro Bank, valorado en 1.300 millones de libras (1.600 millones de euros), se ha puesto a la venta y podría aportar escala y depósitos baratos a un rival como Shawbrook. Pero unir fuerzas también causa quebraderos de cabeza ."
+      ],
+      "autor": "Neil Unmack",
+      "fecha": "2026-11-17T04:40:00+00:00",
+      "image": "imagenes/n-fad1f69439d.jpg",
+      "link": "https://cincodias.elpais.com/opinion/2026-11-17/la-concentracion-bancaria-britanica-llegara-pero-sin-prisas.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4831
+    },
+    {
+      "id": "n-7d3256db5d7",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "Nadie hace vino para vender alcohol",
+      "entradilla": "Retirar el etanol después de la fermentación permite a las bodegas ganar consumidores justo cuando la demanda mundial retrocede",
+      "cuerpo": [
+        "Nadie se levanta antes del alba, durante cinco generaciones, para vender alcohol."
+      ],
+      "autor": "Lourdes Cuevas",
+      "fecha": "2026-11-17T04:40:00+00:00",
+      "image": "imagenes/n-7d3256db5d7.jpg",
+      "link": "https://cincodias.elpais.com/opinion/2026-11-17/nadie-hace-vino-para-vender-alcohol.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4831
+    },
+    {
+      "id": "n-750691fcb85",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "La deuda española resiste la incertidumbre política",
+      "entradilla": "El crecimiento y la contención del gasto sostienen la confianza de los inversores",
+      "cuerpo": [
+        "El ruido de la campaña electoral no se ha trasladado al mercado de deuda. A menos de dos semanas de las generales del 29 de noviembre, la prima de riesgo española se sitúa en 57 puntos básicos y no penaliza la incertidumbre política. Ni la posibilidad de un cambio de Gobierno ni la de un Parlamento difícil de manejar alteran la confianza de los inversores, cuya preocupación se concentra en Francia ."
+      ],
+      "autor": "Cinco Días",
+      "fecha": "2026-11-17T04:40:00+00:00",
+      "image": "imagenes/n-750691fcb85.jpg",
+      "link": "https://cincodias.elpais.com/opinion/2026-11-17/la-deuda-espanola-resiste-la-incertidumbre-politica.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4831
+    },
+    {
+      "id": "n-a0814efdc9a",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "El apagón de Microsoft activa los planes B",
+      "entradilla": "Fallos técnicos como el de Microsoft, más probables que un bloqueo político, impulsarán la demanda de servicios tecnológicos de respaldo",
+      "cuerpo": [
+        "No hay nada como un apagón para preguntarse dónde guardó uno la linterna. La interrupción de varios servicios de Microsoft vuelve a poner de relieve la dependencia casi absoluta de la economía global respecto de las big tech ."
+      ],
+      "autor": "Jennifer Johnson",
+      "fecha": "2026-11-17T04:40:00+00:00",
+      "image": "imagenes/n-a0814efdc9a.jpg",
+      "link": "https://cincodias.elpais.com/opinion/2026-11-17/el-apagon-de-microsoft-activa-los-planes-b.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4831
+    },
+    {
+      "id": "n-ef7821615fa",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "La batalla por el voto útil reabre las brechas del bloque de izquierdas",
+      "entradilla": "El Frente Amplio, debilitado en las encuestas, se revuelve contra el PSOE por copiar propuestas y ocupar su espacio mientras en la derecha también se recrudece la batalla entre PP y Vox",
+      "cuerpo": [
+        "Pedro Sánchez quiere repetir la hazaña de 2023 con un esquema de campaña bastante similar a aquel, con una llamada a la movilización de la izquierda para frenar la llegada de la ultraderecha al poder. Sin embargo, hay cambios muy importantes en la política española sobre aquellas elecciones en las que casi todas las encuestas apuntaban a una mayoría absoluta del PP y Vox que nunca llegó."
+      ],
+      "autor": "Carlos E Cué",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "",
+      "link": "https://elpais.com/espana/2026-11-17/la-batalla-por-el-voto-util-reabre-las-brechas-del-bloque-de-izquierdas.html",
+      "medio": "elpais.com",
+      "viral": 0.4321
+    },
+    {
+      "id": "n-f8a406b3cf2",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Vox se frena y cede terreno al PP",
+      "entradilla": "El quinto ‘tracking’ de 40dB. indica que el PSOE prosigue su lenta escalada sin que apenas se muevan los bloques",
+      "cuerpo": [
+        "Los primeros días de campaña no parecen haberle sentado bien a Vox, a tenor de los cuatro primeros trackings de 40 dB. para EL PAÍS y la Cadena SER. El beneficiado es el PP, que logra frenar sus fugas hacia la extrema derecha, lo que le reporta una cierta mejoría. El PSOE también prolonga su lenta escalada, aunque el reparto de fuerzas entre los bloques, claramente favorable al de la derecha, no sufre modificaciones reseñables."
+      ],
+      "autor": "Xosé Hermida,Yolanda Clemente Pomeda",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-f8a406b3cf2.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-17/vox-se-frena-y-cede-terreno-al-pp.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-07ad0805d75",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Abascal evita revelar en campaña cuál es su plan para las pensiones",
+      "entradilla": "Figaredo reconoció en 2025 que el cambio al nuevo modelo que propugna su partido sería “traumático”",
+      "cuerpo": [
+        "Hay frases que los candidatos repiten en todos sus mítines como si fuesen el estribillo de su campaña. Lo hizo Santiago Abascal el pasado sábado al mediodía en Almería. “Los mayores no son esos egoístas a los que pinta el Gobierno obsesionados por unos euros más de pensión”, dijo. Insistió el sábado por la tarde en Murcia : “Los pensionistas no son esos seres materialistas que describe el Gobierno, obsesionados por unos euros más de pensión. Tienen preocupaciones mucho más elevadas”. Y remachó el domingo en Cornellà: “Esos abuelos que han trabajado toda la vida tienen una pensión modesta y su preocupación no es la que el Gobierno insiste tanto, convirtiéndolos en unos seres materialistas,…"
+      ],
+      "autor": "Miguel González López",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-07ad0805d75.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-17/abascal-evita-revelar-en-campana-cual-es-su-plan-para-las-pensiones.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-6a5249ba9f5",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "El CNI detalla diez diferencias entre el asalto de Ceuta de 2021 y el de julio pasado para excluír la autoría de Marruecos",
+      "entradilla": "La Abogacía del Estado deniega la defensa al exdelegado del Gobierno en Ceuta que se plantea pedir aplazar su declaración como investigado",
+      "cuerpo": [
+        "El salto a la valla de Ceuta de miles de personas desde Marruecos en el año 2021 tuvo algunas similitudes, pero sobre todo diferencias, con el paso fronterizo a nado del pasado mes de julio. No solo por las dimensiones —hace cinco años entraron 10.000 personas, mientras que hace cuatro meses la cifra superó los 80.000—, sino especialmente por el papel de Marruecos, de acuerdo al último informe del Centro Nacional de Inteligencia (CNI). El departamento que depende del Ministerio de Defensa ha expuesto a la jueza de la Audiencia Nacional que, tras una “investigación en profundidad”, no ha hallado “evidencias” de que Rabat hubiera orquestado el asalto como sí ocurrió en 2021. El Centro…"
+      ],
+      "autor": "Irene Dorta",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-6a5249ba9f5.jpg",
+      "link": "https://elpais.com/espana/2026-11-17/el-cni-detalla-diez-diferencias-entre-el-asalto-de-ceuta-de-2021-y-el-de-julio-pasado-para-descartar-la-autoria-de-marruecos.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-15bb786621e",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "El futuro del aborto: entre garantizar el derecho en la Constitución y recortarlo a las menores",
+      "entradilla": "Vox, que siempre ha abogado por vetar la interrupción voluntaria del embarazo de la sanidad pública, está eludiendo el debate; el PP no la nombra en su programa y la izquierda quiere blindarla",
+      "cuerpo": [
+        "El aborto en España puede sufrir restricciones tras las próximas elecciones. Pero es un derecho que, sin entrar en matices, no está en juego. No, al menos, si se atiende a lo que proponen los principales partidos: ninguno, ni siquiera Vox, amenaza explícitamente con eliminarlo. En cambio, los partidos de izquierdas ―tanto PSOE como Frente Amplio―, quieren consagrarlo como derecho constitucional ."
+      ],
+      "autor": "Pablo Linde",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-15bb786621e.jpg",
+      "link": "https://elpais.com/sociedad/2026-11-17/el-futuro-del-aborto-entre-garantizar-el-derecho-en-la-constitucion-y-recortarlo-a-las-menores.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-abc2614b1ae",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Margarita del Val: “El mayor virus de la clase política es querer perpetuarse en el poder”",
+      "entradilla": "La inmunóloga del CSIC recuerda la “ilusión” de las elecciones de 1977 frente a la “superficialidad” de las actuales. Opina que la pandemia sirvió para que científicos y políticos conectasen: “Estamos condenados a entendernos”",
+      "cuerpo": [
+        "“Yo soy de coger todas las papeletas y esconderme tras la cortinilla para votar… Soy muy tímida, no tengo redes, ni siquiera foto en el WhatsApp”. La inmunóloga Margarita del Val (67 años) saltó a los medios como divulgadora de referencia durante la covid “por responsabilidad” . No echa de menos la exposición pública “para nada”, pero le luce la soltura adquirida cuando responde. Y cuando calla, porque ante todo, “la ciencia”, dice, “ha de ser independiente”."
+      ],
+      "autor": "Patricia Gosálvez Reyes",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-abc2614b1ae.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-17/margarita-del-val-el-mayor-virus-de-la-clase-politica-es-querer-perpetuarse-en-el-poder.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-8e0843ac8ca",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Primera cita electoral en la Comunidad Valenciana tras la riada que acabó con la vida de 234 personas: ¿habrá un efecto dana?",
+      "entradilla": "La estimación de EL PAÍS prevé 20 escaños de PP y Vox frente a 13 del bloque de izquierdas. Abascal cerrará la campaña en la plaza de Toros de Valencia, con capacidad para 12.000 personas",
+      "cuerpo": [
+        "Las elecciones del próximo 29 de noviembre son las primeras que se celebran en la Comunidad Valenciana después de la fatídica dana del 29 de octubre de 2024 . Esta es la principal particularidad que presenta la Comunidad Valenciana, en especial la circunscripción de Valencia, donde murieron 234 personas en las comarcas del sur, con respecto a otros territorios del Estado."
+      ],
+      "autor": "Ferran Bono Ara,Cristina Vázquez Navarro",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-8e0843ac8ca.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-17/primera-cita-electoral-en-la-comunidad-valenciana-tras-la-dana-las-encuestas-dan-una-amplia-mayoria-a-la-derecha.html",
+      "medio": "elpais.com",
+      "viral": 0.5278
+    },
+    {
+      "id": "n-7f15e32a91a",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Núcleo Nacional atacaba a mujeres: “¡Te pego una hostia y te mato!”",
+      "entradilla": "Varias víctimas denunciaron a este grupo neonazi, que acorralaba a sus enemigos, planeaba coaccionar a testigos judiciales y mantenía contactos con otros ultras españoles",
+      "cuerpo": [
+        "Núcleo Nacional , el grupo neonazi desmantelado hace diez días tras 14 detenciones, acorralaba a sus víctimas por las calles, planeaba coaccionar a testigos judiciales y mantenía contacto con numerosas organizaciones extremistas españolas, entre ellas Revuelta, una asociación célebre por convocar en 2023 protestas contra las sedes socialistas y ligada inicialmente a Vox , según el sumario, al que ha tenido acceso EL PAÍS, y que forma parte de la investigación del Juzgado de Instrucción Número 1 de Gijón. “¡Hija de puta, charo [término despectivo para insultar a mujeres progresistas de mediana edad], feminista de mierda, no defiendes a tu país!”, gritaron el pasado mayo siete militantes de…"
+      ],
+      "autor": "Joaquín Gil",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "",
+      "link": "https://elpais.com/espana/2026-11-17/nucleo-nacional-atacaba-a-mujeres-te-pego-una-hostia-y-te-mato.html",
+      "medio": "elpais.com",
+      "viral": 0.4321
+    },
+    {
+      "id": "n-14edc103de0",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Las decisiones judiciales y los tiempos electorales",
+      "entradilla": "¿Hay que pararlo todo? ¿Se deben practicar solo las diligencias imprescindibles?",
+      "cuerpo": [
+        "El inicio de la campaña electoral ha reabierto el debate sobre el papel de la justicia cuando se acaban de convocar unos comicios . ¿Hay que pararlo todo? ¿Se deben practicar solo las diligencias imprescindibles? ¿Pueden seguir las citaciones que comporten paseíllo hasta la sede judicial y la pena de telediario ? ¿Es conveniente para la propia justicia que en los períodos electorales pueda seguir en el aire el pseudoprincipio jurídico sintetizado en la expresión “el que pueda hacer, que haga”? Estas preguntas y otras de similar contenido flotan cada día más en el ambiente de la campaña, a propósito de actuaciones policiales y judiciales llevadas a cabo desde que el presidente del Gobierno,…"
+      ],
+      "autor": "José María Brunet",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-14edc103de0.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-17/las-decisiones-judiciales-y-los-tiempos-electorales.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-25b3b2f6b0a",
+      "sec": "deportes",
+      "slot": 0,
+      "titulo": "La digestión de las dos derrotas de De la Fuente: del frío en un hangar escocés al virus suelto en Las Rozas",
+      "entradilla": "El primer chasco del seleccionador en Glasgow provocó dudas en 2023, justo antes de la racha histórica de 44 partidos de competición invicto, con la que ha acabado Inglaterra sin causar el sobresalto de entonces",
+      "cuerpo": [
+        "La noche del 28 de marzo de 2023 la selección española pasó tres horas atrapada por la burocracia aduanera en un hangar del aeropuerto de Glasgow. Fuera no dejaba de llover. Les alcanzaba el frío húmedo mientras aguardaban el final de la exhaustiva revisión de documentos y materiales para poder escapar de Escocia. Acababan de sufrir un chasco formidable en Hampden Park ante una selección en el puesto 42 del ránking FIFA (2-0). Era solo un partido de clasificación para la Eurocopa del siguiente verano, pero también era solo el segundo partido de Luis de la Fuente en el banquillo. “Se veían nubes negras en el horizonte”, recuerda una fuente de la federación."
+      ],
+      "autor": "David Álvarez",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-25b3b2f6b0a.jpg",
+      "link": "https://elpais.com/deportes/futbol/2026-11-17/la-digestion-de-las-dos-derrotas-de-de-la-fuente-del-frio-en-un-hangar-escoces-al-virus-suelto-en-las-rozas.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-ea82b3e2753",
+      "sec": "deportes",
+      "slot": 0,
+      "titulo": "Paolo Galbiati, exentrenador de Baskonia: “Llevo una parte del pueblo vasco dentro de mí”",
+      "entradilla": "El técnico italiano, despedido del club de Vitoria en octubre, reflexiona en esta entrevista sobre su paso por el equipo, su carrera y su personalidad",
+      "cuerpo": [
+        "Los pasos que antes guiaban a Paolo Galbiati por Vitoria le llevan ahora por Concorezzo, la localidad de la Lombardía donde el entrenador italiano de 42 años ha vuelto al refugio del hogar después de ser despedido hace un mes en el Baskonia . Galbiati dejó una profunda huella en la afición del Buesa Arena por su personalidad extrovertida, su carácter ganador y su energía contagiosa, y sobre todo por la conquista en Valencia de la última Copa del Rey. Ahora reflexiona sobre su carrera, su estilo y su paso por el equipo baskonista. “Echo de menos a los vascos”, comenta."
+      ],
+      "autor": "Juan Morenilla Villalba",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-ea82b3e2753.jpg",
+      "link": "https://elpais.com/deportes/baloncesto/2026-11-17/paolo-galbiati-exentrenador-de-baskonia-llevo-una-parte-del-pueblo-vasco-dentro-de-mi.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-e4109d37034",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "La muerte digna de mi madre",
+      "entradilla": "Los días van pasando en el hospital. Mi madre, María Luisa, sigue sin admitir ningún tipo de alimento. Le quitan también el suero porque le está hinchando las piernas. La dosis mínima de morfina hace que cada vez le cueste más mantenerse…",
+      "cuerpo": [
+        "María Luisa Herrera, mi madre, vivía sola en el centro de Madrid. Mis hermanos y yo estábamos muy pendientes de lo que pudiera necesitar, pero a sus 87 años seguía siendo una mujer independiente. Todos los días, con sol abrasador o chuzos de punta, ella se subía en el autobús a desayunar con sus amigas en un bar de la calle Esparteros."
+      ],
+      "autor": "Miguel Del Arco",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-e4109d37034.jpg",
+      "link": "https://elpais.com/sociedad/2026-11-17/la-muerte-digna-de-mi-madre.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-49c335fa59c",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "¿Por qué los jóvenes ya no pueden prosperar?",
+      "entradilla": "La concentración de riqueza está dejando a las nuevas generaciones con cada vez menos posibilidades de construir un futuro por sus propios medios",
+      "cuerpo": [
+        "Para entender las protestas juveniles que estamos presenciando hay que reparar en la falta de perspectivas de futuro que afrontan estos jóvenes. La dificultad de acceso a la vivienda es la cara más visible. Hoy casi nadie puede comprar un piso en una gran ciudad española valiéndose únicamente de su salario. Si alguien joven lo consigue, es porque sus padres pueden aportar varias decenas de miles de euros para la entrada; si alguien de más edad puede permitírselo, es muy probable que detrás haya una herencia. La meritocracia está siendo sustituida por una suerte de “herenciocracia”: las posibilidades de prosperar dependen cada vez menos del esfuerzo y los ingresos propios y cada vez más del…"
+      ],
+      "autor": "Mayra Martínez Avidad",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-49c335fa59c.jpg",
+      "link": "https://elpais.com/educacion/2026-11-17/por-que-los-jovenes-ya-no-pueden-prosperar.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-f70c5ed10bf",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "Elisardo Becoña, psicólogo clínico: “El hachís y la marihuana son hoy más potentes, lo que aumenta el riesgo de adicción y brotes psicóticos”",
+      "entradilla": "El experto explica que se ha multiplicado el THC del cannabis y advierte de que los jóvenes están cambiando el consumo de sustancias por la dependencia de las pantallas",
+      "cuerpo": [
+        "En materia de adicciones, Elisardo Becoña (Lourizán, 69 años) se las ha “recorrido todas”. Empezó hace cuatro décadas por el tabaco, principal causa de muerte evitable: “52.000 muertes prematuras al año, seguidas de 18.000 por alcohol”. De ahí pasó a las drogas ilegales, al juego patológico, “que también arruina a las familias”, y, en la última década, al uso problemático de videojuegos, móvil y redes sociales. Catedrático de Psicología Clínica en la Universidad de Santiago de Compostela (USC) y director de su Unidad de Tabaquismo y Trastornos Adictivos, este verano dedicó una ponencia en los cursos de la UIMP , en Santander, al cannabis, “una silenciosa droga epidémica”."
+      ],
+      "autor": "Aser García Rada",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-f70c5ed10bf.jpg",
+      "link": "https://elpais.com/salud-y-bienestar/2026-11-17/elisardo-becona-psicologo-clinico-el-hachis-y-la-marihuana-son-hoy-mas-potentes-lo-que-aumenta-el-riesgo-de-adiccion-y-brotes-psicoticos.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-b87af305be6",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Antonio Roma no existe, pero va a dar un concierto",
+      "entradilla": "Una pequeña discográfica crea un artista con inteligencia artificial, logra que más de 100.000 personas escuchen sus canciones cada mes y ahora saltará al escenario encarnado por un joven talento de la estirpe de los Amador",
+      "cuerpo": [
+        "Puede que Antonio Roma tenga más de 100.000 oyentes en Spotify cada mes, pero eso no lo hace más real. Y aunque en casi todas sus canciones suene al fondo un público que le hace coro, la realidad es que ninguna de esas voces sale de una garganta. Todo lo hace una herramienta de inteligencia artificial, y por más que sus creadores lo quieran, no existe en el mundo un hada azul que pueda convertirlo en un hombre de verdad. Excepto, quizás, el ingenio."
+      ],
+      "autor": "Verónica Figueroa",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "",
+      "link": "https://elpais.com/cultura/2026-11-17/antonio-roma-no-existe-pero-va-a-dar-un-concierto.html",
+      "medio": "elpais.com",
+      "viral": 0.4321
+    },
+    {
+      "id": "n-84b2d422fdd",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "La Transición, como (casi) nunca se ha visto",
+      "entradilla": "El festival de Gijón proyecta cinco piezas audiovisuales restauradas de los años setenta en la sesión ‘Interior / Exterior’, que escarba en la memoria fílmica olvidada de la época",
+      "cuerpo": [
+        "¿Qué queda de lo rodado en la Transición? No del cine comercial ni de la mirada oficialista y franquista, sino de los cineastas que buscaron algo más, de múltiples creadores que desde la militancia política, social o solo por la ambición de hacer películas distintas, apegadas a la realidad, salieron a la calle y rodaron. En solitario, en cooperativa, como pudieron, con material fílmico que en demasiadas ocasiones no ha soportado el paso del tiempo. Algunos de esos filmes han sobrevivido y, ahora, el Comisionado para la Celebración de los 50 años de España en Libertad y el Instituto Universitario del Cine Español de la Universidad Carlos III de Madrid se han unido para agrupar cinco de…"
+      ],
+      "autor": "Gregorio Belinchón Yagüe",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-84b2d422fdd.jpg",
+      "link": "https://elpais.com/cultura/cine/2026-11-17/la-transicion-como-casi-nunca-se-ha-visto.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-919ac910277",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Los actores que han dado vida a James Bond, de peor a mejor",
+      "entradilla": "Robert Pattinson se suma a un grupo que ha ido de Sean Connery a Daniel Craig, pasando por George Lazenby, Roger Moore, Timothy Dalton y Pierce Brosnan",
+      "cuerpo": [
+        "Pocas cosas hay más subjetivas en el cine que decidir quién ha sido mejor o peor James Bond. En general, igual que elegir entre actores que hayan interpretado al mismo personaje. A cambio, conlleva divertidas y enconadas discusiones... salvo en casos evidentes como Superman (Christopher Reeve) y, para abrir otro melón, Batman (George Clooney, aunque le tocaron el peor traje y el peor guion en la peor película)."
+      ],
+      "autor": "Gregorio Belinchón Yagüe",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "",
+      "link": "https://elpais.com/cultura/cine/2026-11-17/los-actores-que-han-dado-vida-a-james-bond-de-peor-a-mejor.html",
+      "medio": "elpais.com",
+      "viral": 0.4321
+    },
+    {
+      "id": "n-7f5a0c937cd",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Aquella emoción de Patti Smith",
+      "entradilla": "La genuina felicidad de la cantante en Oviedo nos recuerda que la vida es fruto de la tensión entre la identidad individual y la entrega a un sentido colectivo",
+      "cuerpo": [
+        "¿Y cómo no recordar a Patti Smith en Oviedo , el pasado octubre, en la antigua Fábrica de Armas de la Vega, visiblemente emocionada al encontrarse con la sorpresa de que tres mil personas coreaban People Have The Power ? Por un momento, me pareció que las expresiones de felicidad de Patti, difundidas en riguroso directo, estaban cargándose del peso de su vida entera."
+      ],
+      "autor": "Enrique Vila-Matas",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-7f5a0c937cd.jpg",
+      "link": "https://elpais.com/cultura/2026-11-17/aquella-emocion-de-patti-smith.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-534f2bfd1d2",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Charlie Porter, escritor: “Estar en Grindr me enseñó a escribir escenas sexo”",
+      "entradilla": "El autor inglés, aclamado periodista de moda y célebre figura en los museos y las calles londinenses, debuta en la ficción con ‘Nova Scotia House’",
+      "cuerpo": [
+        "Charlie Porter (Northamptonshire, 53 años), seguramente el periodista con la mirada más refinada de Reino Unido tras décadas escribiendo de moda para célebres cabeceras, estaba paseando a su perro por un parque desierto, en el Londres confinado de 2020 , cuando reparó en “una vivienda de protección oficial de los años cincuenta al lado de un solar, en el que se había empezado a construir un edificio”, describe. “El edificio iba a cubrir de sombra aquella vivienda”."
+      ],
+      "autor": "Tom C. Avendaño",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-534f2bfd1d2.jpg",
+      "link": "https://elpais.com/cultura/2026-11-17/charlie-porter-escritor-estar-en-grindr-me-enseno-a-escribir-escenas-sexo.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-a8ac30074a6",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Marta Borraz, premio Tusquets: “Hay personas que te atraen y, a pesar de ser oscuras, no te puedes resistir”",
+      "entradilla": "La autora novela en ‘Las leopardas’ la vida y muerte de una mujer contagiada por un hombre enfermo de sida que dejó varias víctimas a sabiendas",
+      "cuerpo": [
+        "El día en que la editorial Tusquets anunció su último premio de novela, el pasado septiembre, la ganadora daba y daba rodeos con pudor sobre un argumento que había rascado de su historia familiar. Supimos que narraba la muerte de su tía, mujer joven, vital y divertida que dejó regueros de ánimo antes de fallecer en los noventa, pero le costó un mundo decir de qué enfermedad. Hoy, cuando la novela ya rueda por las librerías, Marta Borraz habla sin rodeos de una realidad que quebró injustamente las vidas de personas contagiadas de sida por un enfermo a sabiendas. “Aquel fue un hijo de puta”, sentencia. Las leopardas es la obra veraz de una autora nacida en Huesca en 1981. Que nadie espere…"
+      ],
+      "autor": "Berna González Harbour",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-a8ac30074a6.jpg",
+      "link": "https://elpais.com/cultura/2026-11-17/marta-borraz-premio-tusquets-hay-personas-que-te-atraen-y-a-pesar-de-ser-oscuras-no-te-puedes-resistir.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-595fe5e159a",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Chiara Oliver: “Ser artistas abiertamente ‘queer’ es una forma de decir que no nos van a callar”",
+      "entradilla": "La ‘extriunfita’ adelanta la ampliación de su primer álbum, ‘no fue real’, en un concierto exclusivo organizado por LOS40 en Barcelona",
+      "cuerpo": [
+        "Cuando suenan los primeros acordes de Calle Luna , la emoción desborda al centenar de jóvenes en el interior del Convent dels Àngels (Barcelona). Han sido los seleccionados para asistir este lunes al secret show de Chiara Oliver (Ciutadella de Menorca, 2004), un espectáculo privado organizado por LOS40 con motivo de la Music Week de LOS40 Music Awards Santander 2026 en Barcelona . “Me encanta dar conciertos acústicos porque puedo jugar con las canciones y hay espacio para hacer algo más íntimo con el público”, confiesa la cantante entre bambalinas unas horas antes de la cita musical. Tras un año frenético de gira por Europa y América Latina, la exconcursante de Operación Triunfo 2023…"
+      ],
+      "autor": "Noemí Mansino Pérez",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-595fe5e159a.jpg",
+      "link": "https://elpais.com/cultura/2026-11-17/chiara-oliver-ser-artistas-abiertamente-queer-es-una-forma-de-decir-que-no-nos-van-a-callar.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-69b0dc4f9a9",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "Malestar en Hacienda por las insinuaciones del PP de que las cuentas públicas esconden irregularidades",
+      "entradilla": "La formación de Alberto Núñez Feijóo sugiere que hay trampas y un déficit oculto, pero varios expertos señalan que es muy difícil cualquier manipulación contable",
+      "cuerpo": [
+        "El Partido Popular promete llegar al Gobierno bajando impuestos y manteniendo partidas de gasto como las pensiones y la defensa. Pero la ecuación presenta la incógnita de cómo cuadrar ingresos y gastos en esa ambiciosa hoja de ruta. Más aún cuando el margen ya es estrecho y el ritmo de crecimiento de la economía española tiende a la moderación por el fin de los fondos europeos, la persistencia de la inflación o el menor dinamismo de la demanda nacional. El líder del PP, Alberto Núñez Feijóo, ha empezado a condicionar todas esas decisiones al estado real de las cuentas públicas. Y ha deslizado la posibilidad de que el Ejecutivo de Pedro Sánchez esté ocultando parte del gasto y obligaciones…"
+      ],
+      "autor": "Pablo Sempere",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-69b0dc4f9a9.jpg",
+      "link": "https://elpais.com/economia/2026-11-17/malestar-en-hacienda-por-las-insinuaciones-del-pp-de-que-las-cuentas-publicas-esconden-irregularidades.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-0dcf81fe19d",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "Anthropic permite acudir a su OPV en España con varias entidades y optar a más acciones",
+      "entradilla": "La colocación se lleva a cabo sin un registro central de órdenes. Los inversores pueden solicitar los títulos a través de más de un intermediario y sacar partido si se realiza una adjudicación lineal por petición",
+      "cuerpo": [
+        "Wall Street abrirá sus puertas a los pequeños inversores españoles en la Oferta Pública de Suscripción (OPS) y Venta (OPV) de Anthropic . Ninguna entidad española participa en la colocación, pero el laboratorio de inteligencia ha habilitado varios intermediarios que operan en el país para solicitar las acciones. De entrada, el plazo concluye el miércoles 18 de noviembre a las 16.00 (hora peninsular española). La demanda ya supera las seis veces el importe de la oferta , según Bloomberg, y se especula con una subida del precio respecto a la horquilla de 70 a 78 dólares por acción recogida en el folleto registrado ante el supervisor estadounidense, la SEC, además de un fuerte prorrateo en la…"
+      ],
+      "autor": "Pablo Martín Simón",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-0dcf81fe19d.jpg",
+      "link": "https://cincodias.elpais.com/mercados-financieros/2026-11-17/anthropic-permite-acudir-a-su-opv-en-espana-con-varias-entidades-y-optar-a-mas-acciones.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-d1dce83230f",
+      "sec": "economia",
+      "slot": 0,
+      "titulo": "El turbofondo sobre Anthropic que llega a la Bolsa y promete multiplicar por tres sus movimientos",
+      "entradilla": "Leverage Shares lanza en Londres el primer producto cotizado sobre la compañía de IA, capaz de triplicar tanto las ganancias como las pérdidas para los inversores",
+      "cuerpo": [
+        "La esperada salida a Bolsa de Anthropic , una de las principales compañías mundiales de inteligencia artificial (IA), vendrá acompañada del lanzamiento del primer producto cotizado diseñado para amplificar su comportamiento bursátil. La firma Leverage Shares ha anunciado la admisión a negociación en la Bolsa de Londres de un ETP con apalancamiento tres veces sobre la futura cotización de la empresa estadounidense. Se trata de un turbofondo con el que sus inversores podrán multiplicar tanto las ganancias como las pérdidas que registre el valor."
+      ],
+      "autor": "Miguel Moreno Mendieta",
+      "fecha": "2026-11-17T04:30:01+00:00",
+      "image": "imagenes/n-d1dce83230f.jpg",
+      "link": "https://cincodias.elpais.com/fondos-y-planes/2026-11-17/el-turbofondo-sobre-anthropic-que-llega-a-la-bolsa-y-promete-multiplicar-por-tres-sus-movimientos.html",
+      "medio": "cincodias.elpais.com",
+      "viral": 0.5278
+    },
+    {
+      "id": "n-75666edf4da",
+      "sec": "deportes",
+      "slot": 0,
+      "titulo": "Zverev manda, pero en Turín, Alcaraz impone: “Tiene momentos en los que es ‘Superman”",
+      "entradilla": "El murciano, con un triunfo ya en el bolsillo, rozó el sobresaliente ante Tiafoe, está invicto este año bajo techo y luce el mejor promedio de victorias del circuito (89%)",
+      "cuerpo": [
+        "Se acerca Carlos Alcaraz más feliz que unas castañuelas, sonriente y vacilón. Le pregunta un reportero por el estado de su rodilla, puesto que durante el duelo contra Frances Tiafoe (doble 6-2) también lucía una venda envolvente, al igual que durante los entrenamientos de los días previos en Turín. Y él, de cachondeo, la tira: “¿Me has visto moverme bien?”, dice. “¿Pero me has visto moverme bien?”. “Pues eso es lo único que necesito saber…”.",
+        "Rafa Jódar afronta hoy (14.00, Movistar+) una cita decisiva ante Arthur Fils. Tras haber perdido en el estreno contra Zverev, el madrileño, de 20 años y debutante en la competición, deberá ganar al francés para llegar vivo a la última jornada.",
+        "Fils fue superado el primer día por Shelton, que esta noche (20.30) se encontrará con el alemán. Los cuatro componen el Grupo John McEnroe, mientras Alcaraz, Medvedev, Cobolli y Tiafoe forman parte del Grupo Ivan Lendl."
+      ],
+      "autor": "Alejandro Ciriza Istúriz",
+      "fecha": "2026-11-17T04:30:00+00:00",
+      "image": "imagenes/n-75666edf4da.jpg",
+      "link": "https://elpais.com/deportes/tenis/2026-11-17/zverev-manda-pero-en-turin-alcaraz-impone-tiene-momentos-en-los-que-es-superman.html",
+      "medio": "elpais.com",
+      "viral": 0.4821
+    },
+    {
+      "id": "n-61a15be28cc",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Los promotores de la candidatura conjunta de la izquierda para el Senado llaman a “la remontada”",
+      "entradilla": "Los promotores de la inciativa celebran el milagro de unidad en la izquierda en la Cámara alta y censuran el fracaso de las negociaciones para concurrir juntos en el Congreso",
+      "cuerpo": [
+        "La idea surgió en un restaurante de la calle Ponzano, “¡en territorio Ayuso!”, subrayaron los promotores de la candidatura conjunta de la izquierda al Senado en 46 circunscripciones al festejar esta tarde la proeza “histórica” de esa unidad en un acto en el edificio Espacio Ratro de Madrid. Fue hace un año. De ahí, explicó el activista Enrique del Olmo, al que presentaron como víctima del torturador franquista Billy El Niño, salió un grupo de WhatsApp con 300 miembros y en dos semanas tenían un manifiesto y una web con 3.000 apoyos. A los últimos que contactaron, según explicaron, fue a los partidos políticos afectados para que el plan no se torciera, para que no les diera a tiempo a…"
+      ],
+      "autor": "Natalia Junquera Añón",
+      "fecha": "2026-11-16T22:16:19+00:00",
+      "image": "imagenes/n-61a15be28cc.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/los-promotores-de-la-candidatura-conjunta-de-la-izquierda-para-el-senado-llaman-a-la-remontada.html",
+      "medio": "elpais.com",
+      "viral": 0.4888
+    },
+    {
+      "id": "n-33fdeed9fea",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Rego asegura que el próximo objetivo de los nacionalistas es una AP-9 gratuita",
+      "entradilla": "El candidato nacionalista incidió que la razón por la que se siguen pagando peajes por circular por la AP-9 «foi a decisión do PP, que prorrogou a concesión ata o 2048»",
+      "cuerpo": [
+        "El candidato nacionalista incidió que la razón por la que se siguen pagando peajes por circular por la AP-9 «foi a decisión do PP, que prorrogou a concesión ata o 2048»"
+      ],
+      "autor": "Efe",
+      "fecha": "2026-11-16T22:09:00+01:00",
+      "image": "imagenes/n-33fdeed9fea.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/rego-asegura-proximo-objetivo-nacionalistas-ap-9-gratuita/00031794862896182180816.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4361
+    },
+    {
+      "id": "n-b9643bcfbc6",
+      "sec": "deportes",
+      "slot": 0,
+      "titulo": "Alemania despierta ante Países Bajos para liderar su grupo y endosar la primera goleada a Xavi",
+      "entradilla": "El combinado germano dirigido por Klopp, la Francia de Zidane y Portugal o Dinamarca, serán los posibles rivales de España en los cuartos de final",
+      "cuerpo": [
+        "A falta de que se concrete este martes el último grupo de la Nations League, España se asoma a unos cuartos de final con rivales durísimos. Después de que Francia venciera a Turquía el domingo y acabara como líder de su grupo, Alemania destrozó este lunes a Países Bajos (5-0) para robarle el liderato después de cuajar una fase regular muy discreta. El combinado alemán dirigido por Jürgen Klopp le endosó una goleada a la selección que comanda Xavi Hernández, que con un empate podría haber sido rival de la Roja. Grecia, la revelación de esta edición, se quedó a las puertas de la clasificación pese a derrotar a Serbia (1-0)."
+      ],
+      "autor": "José Miguel Benítez Gómez",
+      "fecha": "2026-11-16T22:04:25+00:00",
+      "image": "imagenes/n-b9643bcfbc6.jpg",
+      "link": "https://elpais.com/deportes/futbol/2026-11-16/alemania-despierta-ante-paises-bajos-para-liderar-su-grupo-y-endosar-la-primera-goleada-a-xavi.html",
+      "medio": "elpais.com",
+      "viral": 0.4419
+    },
+    {
+      "id": "n-fd9d7b1aae8",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Rueda celebra desde Padrón que el PP está «en forma» de cara a las elecciones generales",
+      "entradilla": "El presidente de la Xunta señaló la importancia de conseguir un quinto diputado en A Coruña",
+      "cuerpo": [
+        "El presidente de la Xunta señaló la importancia de conseguir un quinto diputado en A Coruña"
+      ],
+      "autor": "La Voz",
+      "fecha": "2026-11-16T21:57:00+01:00",
+      "image": "imagenes/n-fd9d7b1aae8.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/rueda-celebra-padron-pp-forma-cara-elecciones-generales/00031794862435763428890.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4806
+    },
+    {
+      "id": "n-5b99203c5b3",
+      "sec": "politica",
+      "slot": 0,
+      "titulo": "Abascal califica en Canarias de “invasión planificada” la llegada de cayucos",
+      "entradilla": "El líder de Vox insinúa que Sanchez se dopa y propone hacer “controles ‘antidoping’ por sorpresa en campaña”",
+      "cuerpo": [
+        "El líder de Vox, Santiago Abascal, ha calificado de “invasión planificada” la llegada de inmigrantes a Canarias, que el pasado fin de semana batió récords, con 3.684 personas desembarcadas, alcanzando 27.000 en lo que va de año. Según Abascal, esta inmigración está vinculada a las regularizaciones masivas, al “regalo de las ayudas sociales” y al hecho de que el Gobierno “no quiso defender la frontera de Ceuta ni ha querido vigilar las aguas territoriales” del archipiélago. La solución, ha asegurado, pasa porque la Armada intercepte los cayucos en alta mar “y los lleve a los puertos de los que han partido y no a España. Si no los quieren en Mauritania o Marruecos, aquí tampoco los queremos”,…"
+      ],
+      "autor": "Miguel González López",
+      "fecha": "2026-11-16T20:50:53+00:00",
+      "image": "imagenes/n-5b99203c5b3.jpg",
+      "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/abascal-califica-en-canarias-de-invasion-planificada-la-llega-de-cayucos.html",
+      "medio": "elpais.com",
+      "viral": 0.4342
+    },
+    {
+      "id": "n-e845041e674",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "El PSdeG ironiza con un vídeo de la candidata del Bloque por Lugo grabado en el municipio coruñés de Ames",
+      "entradilla": "Las imágenes, filmadas en O Milladoiro, fueron criticadas en redes sociales por miembros de la formación socialista",
+      "cuerpo": [
+        "Las imágenes, filmadas en O Milladoiro, fueron criticadas en redes sociales por miembros de la formación socialista"
+      ],
+      "autor": "R. J. García",
+      "fecha": "2026-11-16T20:15:00+01:00",
+      "image": "imagenes/n-e845041e674.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/psdeg-ironiza-video-candidata-bloque-lugo-grabado-ames/00031794856358206991516.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4242
+    },
+    {
+      "id": "n-9521670a8a4",
+      "sec": "deportes",
+      "slot": 0,
+      "titulo": "Davidovich vuelve a caerse de la Copa Davis: “Duele, pero mi cuerpo necesita más tiempo”",
+      "entradilla": "El malagueño, ausente desde que triunfase en Shanghái, renuncia a las Finales y Ferrer cita a Dani Mérida, que se suma a Alcaraz, Jódar, Granollers y Martínez",
+      "cuerpo": [
+        "Iba España con todo a Bolonia, dispuesta a lograr, esta vez sí, la Ensaladera que se le resiste desde 2019, fecha del sexto y último entorchado. Sin embargo, ayer se produjo un giro de guion. De nuevo, se cae de la lista Alejandro Davidovich, ausente hace un año —no fue citado en la primera nómina de cuatro, y luego se autodescartó como quinto hombre— y también en las Finales que comenzarán el día 24, próximo martes. El andaluz, de 27 años, anunció que no termina de encontrarse bien desde el punto de vista físico y que no podrá ayudar, pese a haber sido incluido en la convocatoria que emitió David Ferrer en la sede del Consejo Superior de Deportes (CSD) el 26 de octubre.",
+        "Davidovich ha disputado este curso 49 partidos, con un balance de 33 triunfos y 16 derrotas. Además de no haber podido acudir a Basilea ni París, también se había inscrito en Estocolmo (250), aunque los problemas de espalda le han impedido continuar.",
+        "Quien sigue y sigue es Granollers (40), que este lunes logró una victoria en su primer compromiso maestro en el dobles. Él y el argentino Horacio Zeballos superaron por un doble 6-4 (en 1h 18m) a la pareja formada por Simone Bolelli y Andrea Vavassori."
+      ],
+      "autor": "Alejandro Ciriza Istúriz",
+      "fecha": "2026-11-16T18:37:14+00:00",
+      "image": "imagenes/n-9521670a8a4.jpg",
+      "link": "https://elpais.com/deportes/tenis/2026-11-16/merida-sustituye-a-davidovich-para-la-copa-davis-mi-cuerpo-necesita-tiempo.html",
+      "medio": "elpais.com",
+      "viral": 0.4203
+    },
+    {
+      "id": "n-f3d00cb02f6",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "La Fiscalía pide 16 años por asesinato para el acusado de atropellar a su hermano en una pedida de mano en Ribeira",
+      "entradilla": "La celebración acabó en una batalla campal entre las dos familias, con un muerto, decenas de heridos y 13 detenidos",
+      "cuerpo": [
+        "La celebración acabó en una batalla campal entre las dos familias, con un muerto, decenas de heridos y 13 detenidos"
+      ],
+      "autor": "M. Gómez",
+      "fecha": "2026-11-16T18:12:00+01:00",
+      "image": "imagenes/n-f3d00cb02f6.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/barbanza/ribeira/2026/11/16/fiscalia-pide-16-anos-asesinato-acusado-atropellar-hermano-pedida-mano-ribeira/00031794845154924559442.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.4114
+    },
     {
       "id": "n-de3e6ea7cec",
       "sec": "cultura",
@@ -15,7 +771,7 @@
       "image": "imagenes/n-de3e6ea7cec.jpg",
       "link": "https://elpais.com/cultura/2026-11-16/los-rivera-ordonez-vaya-par-de-gemelos.html",
       "medio": "elpais.com",
-      "viral": 0.4551
+      "viral": 0.3673
     },
     {
       "id": "n-b37dad7f55b",
@@ -31,7 +787,7 @@
       "image": "imagenes/n-b37dad7f55b.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/el-paron-de-selecciones-castiga-a-la-defensa-del-barcelona.html",
       "medio": "elpais.com",
-      "viral": 0.4984
+      "viral": 0.4105
     },
     {
       "id": "n-de6b3c40742",
@@ -47,7 +803,7 @@
       "image": "",
       "link": "https://elpais.com/ajedrez/videos/2026-11-16/videos-de-ajedrez-maxima-armonia-con-las-piezas-negras.html",
       "medio": "elpais.com",
-      "viral": 0.4023
+      "viral": 0.3145
     },
     {
       "id": "n-414616087ca",
@@ -63,7 +819,7 @@
       "image": "imagenes/n-414616087ca.jpg",
       "link": "https://elpais.com/economia/2026-11-16/la-agencia-de-seguridad-ferroviaria-blinda-la-exigencia-de-la-doble-verificacion-de-las-ordenes-de-adif-a-los-maquinistas.html",
       "medio": "elpais.com",
-      "viral": 0.4963
+      "viral": 0.4085
     },
     {
       "id": "n-ca72df78904",
@@ -79,7 +835,7 @@
       "image": "imagenes/n-ca72df78904.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/vota-opina-parece-noviembre-ciudades-pueblos-galicia-vistan-navidad/00031794838765302898686.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.397
+      "viral": 0.3092
     },
     {
       "id": "n-a5a0315c788",
@@ -95,7 +851,7 @@
       "image": "imagenes/n-a5a0315c788.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/xunta-reune-embajador-vietnam/00031794841641818773737.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4868
+      "viral": 0.3989
     },
     {
       "id": "n-23bcd85858a",
@@ -111,7 +867,7 @@
       "image": "imagenes/n-23bcd85858a.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/plantea-partido-guia-indecisos-sobre-soluciones-problema/00031794834161049204551.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4861
+      "viral": 0.3983
     },
     {
       "id": "n-1483c66427d",
@@ -127,7 +883,7 @@
       "image": "imagenes/n-1483c66427d.jpg",
       "link": "https://elpais.com/tecnologia/branded/ocurrio-en-internet/2026-11-16/la-estafa-de-la-tienda-en-linea-falsa.html",
       "medio": "elpais.com",
-      "viral": 0.4918
+      "viral": 0.404
     },
     {
       "id": "n-7f9e184271c",
@@ -143,7 +899,7 @@
       "image": "imagenes/n-7f9e184271c.jpg",
       "link": "https://elpais.com/tecnologia/2026-11-16/los-grandes-centros-de-datos-de-ee-uu-ya-consumen-tanta-energia-como-todo-chile.html",
       "medio": "elpais.com",
-      "viral": 0.5375
+      "viral": 0.4496
     },
     {
       "id": "n-2906fcab250",
@@ -159,7 +915,7 @@
       "image": "imagenes/n-2906fcab250.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/la-uefa-presenta-al-frances-philippe-diallo-para-derrocar-a-infantino-como-presidente-de-la-fifa.html",
       "medio": "elpais.com",
-      "viral": 0.5363
+      "viral": 0.4485
     },
     {
       "id": "n-dc9d888ab38",
@@ -175,7 +931,7 @@
       "image": "imagenes/n-dc9d888ab38.jpg",
       "link": "https://elpais.com/us/entretenimiento/2026-11-16/nominaciones-a-los-grammy-2027-rosalia-logra-nueve-nominaciones.html",
       "medio": "elpais.com",
-      "viral": 0.4889
+      "viral": 0.4011
     },
     {
       "id": "n-8b2e177a19a",
@@ -191,7 +947,39 @@
       "image": "imagenes/n-8b2e177a19a.jpg",
       "link": "https://elpais.com/economia/2026-11-16/la-ocde-senala-la-baja-rentabilidad-de-los-planes-de-pensiones-como-causa-de-su-escasa-penetracion.html",
       "medio": "elpais.com",
-      "viral": 0.4887
+      "viral": 0.4008
+    },
+    {
+      "id": "n-cb79ecab687",
+      "sec": "sociedad",
+      "slot": 0,
+      "titulo": "El acusado de apuñalar en el corazón a un joven la noche que cumplía 21 años alega legítima defensa: «Saqué la navaja para defenderme, yo estaba muerto de miedo»",
+      "entradilla": "Las acusaciones piden hasta 25 años de prisión por el crimen de Amin, que tuvo lugar hace dos años a las puertas de un pub de la zona de vinos de Ourense. La defensa ya anunció que pedirá la libre absolución para el sospechoso",
+      "cuerpo": [
+        "Las acusaciones piden hasta 25 años de prisión por el crimen de Amin, que tuvo lugar hace dos años a las puertas de un pub de la zona de vinos de Ourense. La defensa ya anunció que pedirá la libre absolución para el sospechoso"
+      ],
+      "autor": "Marta Vázquez",
+      "fecha": "2026-11-16T15:25:00+01:00",
+      "image": "imagenes/n-cb79ecab687.jpg",
+      "link": "https://www.lavozdegalicia.es/noticia/ourense/ourense/2026/11/16/acusado-apunalar-corazon-joven-noche-cumplia-21-anos-alega-legitima-defensa-saque-navaja-defenderme-solo-queria-asustarlo/00031794830878910568931.htm",
+      "medio": "lavozdegalicia.es",
+      "viral": 0.394
+    },
+    {
+      "id": "n-ce3a0a8035c",
+      "sec": "cultura",
+      "slot": 0,
+      "titulo": "Robert Pattinson será el nuevo James Bond",
+      "entradilla": "El actor británico, favorito en los últimos días tras las pruebas de cámara, compaginará su labor dando vida a 007 con la de Batman",
+      "cuerpo": [
+        "El londinense Robert Pattinson será, a sus 40 años, el nuevo James Bond, según se ha anunciado en las redes sociales del personaje, creado por Ian Fleming. Pattinson tendrá que compaginar este personaje con el de Batman, del que acaba de terminar su segunda película como protagonista."
+      ],
+      "autor": "Gregorio Belinchón Yagüe",
+      "fecha": "2026-11-16T15:22:12+00:00",
+      "image": "",
+      "link": "https://elpais.com/cultura/cine/2026-11-16/robert-pattinson-sera-el-nuevo-james-bond.html",
+      "medio": "elpais.com",
+      "viral": 0.35
     },
     {
       "id": "n-a052cb10e5a",
@@ -207,7 +995,7 @@
       "image": "imagenes/n-a052cb10e5a.jpg",
       "link": "https://elpais.com/espana/2026-11-16/un-grupo-de-subsaharianos-varados-en-ceuta-reclama-que-no-se-les-devuelva-a-marruecos-que-dios-nos-proteja-de-ese-infierno.html",
       "medio": "elpais.com",
-      "viral": 0.487
+      "viral": 0.3992
     },
     {
       "id": "n-3e006af6562",
@@ -223,7 +1011,7 @@
       "image": "imagenes/n-3e006af6562.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/fly2galicia-rompe-flyyo-15-dias-estreno-opta-portuguesa-white-airlines/0003_202611202611161794838438869.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4806
+      "viral": 0.3928
     },
     {
       "id": "n-ecb0d010ab1",
@@ -239,7 +1027,7 @@
       "image": "imagenes/n-ecb0d010ab1.jpg",
       "link": "https://elpais.com/economia/2026-11-16/la-justicia-italiana-interviene-el-banco-digital-revolut-por-sospechas-de-blanqueo-y-de-operaciones-de-clanes-mafiosos.html",
       "medio": "elpais.com",
-      "viral": 0.5778
+      "viral": 0.4899
     },
     {
       "id": "n-f0cdfde86e1",
@@ -255,7 +1043,7 @@
       "image": "imagenes/n-f0cdfde86e1.jpg",
       "link": "https://elpais.com/espana/2026-11-16/la-universidad-de-la-laguna-desaloja-uno-de-sus-campus-ante-la-visita-de-vito-quiles.html",
       "medio": "elpais.com",
-      "viral": 0.4863
+      "viral": 0.3984
     },
     {
       "id": "n-26d41cadc67",
@@ -271,7 +1059,7 @@
       "image": "imagenes/n-26d41cadc67.jpg",
       "link": "https://elpais.com/suscripciones/elpaismas/experiencias/2026-11-16/hazte-con-tu-vinilo-de-ravalear.html",
       "medio": "elpais.com",
-      "viral": 0.485
+      "viral": 0.3971
     },
     {
       "id": "n-488a242c470",
@@ -287,7 +1075,7 @@
       "image": "imagenes/n-488a242c470.jpg",
       "link": "https://elpais.com/deportes/tenis/2026-11-16/un-estreno-un-triunfo-un-mensaje-poderoso-alcaraz-rotundo-contra-tiafoe.html",
       "medio": "elpais.com",
-      "viral": 0.4848
+      "viral": 0.397
     },
     {
       "id": "n-757023649fe",
@@ -303,7 +1091,7 @@
       "image": "imagenes/n-757023649fe.jpg",
       "link": "https://elpais.com/educacion/2026-11-16/la-consejera-de-educacion-de-madrid-anuncia-que-llevara-ante-los-tribunales-a-los-docentes-en-huelga-por-acoso.html",
       "medio": "elpais.com",
-      "viral": 0.5302
+      "viral": 0.4424
     },
     {
       "id": "n-5bd2ec0102a",
@@ -319,7 +1107,7 @@
       "image": "imagenes/n-5bd2ec0102a.jpg",
       "link": "https://elpais.com/suscripciones/elpaismas/2026-11-16/por-camaron-concierto-homenaje-75-aniversario.html",
       "medio": "elpais.com",
-      "viral": 0.4839
+      "viral": 0.396
     },
     {
       "id": "n-f710428c194",
@@ -335,7 +1123,7 @@
       "image": "imagenes/n-f710428c194.jpg",
       "link": "https://elpais.com/economia/2026-11-16/transportes-espera-la-respuesta-sindical-a-su-oferta-de-mejoras-en-el-ferrocarril-a-horas-de-una-nueva-huelga-de-24-horas.html",
       "medio": "elpais.com",
-      "viral": 0.5283
+      "viral": 0.4405
     },
     {
       "id": "n-61d81323f11",
@@ -351,7 +1139,7 @@
       "image": "imagenes/n-61d81323f11.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/xunta-repartira-40000-dispositivos-evitar-bebes-queden-abandonados-coche/00031794833170936465752.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4745
+      "viral": 0.3866
     },
     {
       "id": "n-e78da834e18",
@@ -367,7 +1155,7 @@
       "image": "imagenes/n-e78da834e18.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/universidad-abanca-incorpora-master-acceso-abogacia-oferta-coruna-vigo/00031794831796792107910.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.473
+      "viral": 0.3852
     },
     {
       "id": "n-95b110d626a",
@@ -383,7 +1171,7 @@
       "image": "imagenes/n-95b110d626a.jpg",
       "link": "https://elpais.com/sociedad/2026-11-16/gerard-depardieu-reconoce-su-culpabilidad-y-envia-sus-excusas-profundas-y-sinceras-a-las-victimas.html",
       "medio": "elpais.com",
-      "viral": 0.4782
+      "viral": 0.3903
     },
     {
       "id": "n-014188a7ae1",
@@ -399,7 +1187,7 @@
       "image": "imagenes/n-014188a7ae1.jpg",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/feijoo-quiere-mano-de-obra-de-inmigrantes-para-el-medio-rural-pero-con-compromiso-de-integracion.html",
       "medio": "elpais.com",
-      "viral": 0.4781
+      "viral": 0.3902
     },
     {
       "id": "n-e1117182769",
@@ -415,7 +1203,7 @@
       "image": "imagenes/n-e1117182769.jpg",
       "link": "https://elpais.com/cultura/2026-11-16/la-poesia-entra-en-el-prado-de-la-mano-de-rilke-el-interprete-del-arte-espanol.html",
       "medio": "elpais.com",
-      "viral": 0.4756
+      "viral": 0.3877
     },
     {
       "id": "n-43415cbed6b",
@@ -433,7 +1221,7 @@
       "image": "imagenes/n-43415cbed6b.jpg",
       "link": "https://elpais.com/deportes/tenis/2026-11-16/turno-para-alcaraz-a-vueltas-con-la-rodilla.html",
       "medio": "elpais.com",
-      "viral": 0.4745
+      "viral": 0.3867
     },
     {
       "id": "n-8528d69bdbb",
@@ -449,7 +1237,7 @@
       "image": "",
       "link": "https://elpais.com/espana/2026-11-16/el-cni-concluye-que-no-se-han-obtenido-evidencias-que-vinculen-la-entrada-masiva-de-ceuta-con-una-accion-del-estado-marroqui.html",
       "medio": "elpais.com",
-      "viral": 0.4233
+      "viral": 0.3354
     },
     {
       "id": "n-e5a73cb7f94",
@@ -465,7 +1253,7 @@
       "image": "",
       "link": "https://elpais.com/espana/2026-11-16/lula-visita-a-sanchez-durante-la-campana-electoral.html",
       "medio": "elpais.com",
-      "viral": 0.4231
+      "viral": 0.3352
     },
     {
       "id": "n-6f9ba3c4fee",
@@ -481,7 +1269,7 @@
       "image": "imagenes/n-6f9ba3c4fee.jpg",
       "link": "https://elpais.com/economia/2026-11-16/el-gobierno-aprobara-este-martes-la-subida-del-salario-minimo-de-2027-a-1286-euros.html",
       "medio": "elpais.com",
-      "viral": 0.5645
+      "viral": 0.4766
     },
     {
       "id": "n-392edd1d387",
@@ -497,7 +1285,7 @@
       "image": "imagenes/n-392edd1d387.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/xunta-convocara-ano-viene-1200-plazas-superara-cuatro-mil-previstas-legislatura/00031794823640239811172.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4661
+      "viral": 0.3783
     },
     {
       "id": "n-0b5c91fc233",
@@ -513,7 +1301,7 @@
       "image": "",
       "link": "https://elpais.com/economia/negocios/2026-11-16/el-hiperciclo-de-las-infraestructuras-un-cambio-economico-global.html",
       "medio": "elpais.com",
-      "viral": 0.4213
+      "viral": 0.3335
     },
     {
       "id": "n-bf6c848d0ed",
@@ -529,7 +1317,7 @@
       "image": "imagenes/n-bf6c848d0ed.jpg",
       "link": "https://elpais.com/espana/catalunya/2026-11-16/la-guardia-civil-registra-un-tren-en-rodalies-en-busca-de-el-ruso.html",
       "medio": "elpais.com",
-      "viral": 0.4705
+      "viral": 0.3826
     },
     {
       "id": "n-22863e2d038",
@@ -545,7 +1333,7 @@
       "image": "imagenes/n-22863e2d038.jpg",
       "link": "https://elpais.com/espana/2026-11-16/un-juez-ordena-google-no-eliminar-contenido-del-software-investigado-en-el-caso-begona-gomez.html",
       "medio": "elpais.com",
-      "viral": 0.4702
+      "viral": 0.3823
     },
     {
       "id": "n-e24c3cff3f2",
@@ -561,7 +1349,7 @@
       "image": "imagenes/n-e24c3cff3f2.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/la-seleccion-alemana-se-despide-de-adidas-tras-mas-de-70-anos-ligados-a-la-marca.html",
       "medio": "elpais.com",
-      "viral": 0.47
+      "viral": 0.3821
     },
     {
       "id": "n-ac2e189ded6",
@@ -577,7 +1365,7 @@
       "image": "imagenes/n-ac2e189ded6.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/agotado-presupuesto-bono-emancipate-ano-atendera-1350-jovenes/00031794826963569892471.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4615
+      "viral": 0.3736
     },
     {
       "id": "n-cc32af3391b",
@@ -593,7 +1381,7 @@
       "image": "imagenes/n-cc32af3391b.jpg",
       "link": "https://cincodias.elpais.com/companias/2026-11-16/millicom-compra-entel-peru-por-1580-millones-de-euros-y-refuerza-su-expansion-en-latinoamerica.html",
       "medio": "cincodias.elpais.com",
-      "viral": 0.4675
+      "viral": 0.3796
     },
     {
       "id": "n-ffdebafea23",
@@ -609,7 +1397,7 @@
       "image": "imagenes/n-ffdebafea23.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/gobierno-central-asigna-175-millones-llevar-5g-350-areas-rurales/00031794825727472496242.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.5063
+      "viral": 0.4185
     },
     {
       "id": "n-809b0a176c6",
@@ -625,7 +1413,7 @@
       "image": "",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/angel-gaitan-el-mecanico-mas-famoso-de-espana-entrevista-a-abascal-tras-el-planton-a-jordi-wild-tienes-mi-voto.html",
       "medio": "elpais.com",
-      "viral": 0.4166
+      "viral": 0.3287
     },
     {
       "id": "n-6eac5fbdd49",
@@ -641,7 +1429,7 @@
       "image": "imagenes/n-6eac5fbdd49.jpg",
       "link": "https://elpais.com/clima-y-medio-ambiente/2026-11-16/una-flotilla-democrata-desembarca-en-la-cop31-el-intento-de-convertir-a-estados-unidos-en-una-petrodictadura-ha-sido-rechazado-por-el-pueblo.html",
       "medio": "elpais.com",
-      "viral": 0.4656
+      "viral": 0.3778
     },
     {
       "id": "n-d8759faee20",
@@ -657,7 +1445,7 @@
       "image": "",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/frente-amplio-apuesta-por-una-jornada-laboral-de-32-horas-y-jubilacion-a-los-65-anos.html",
       "medio": "elpais.com",
-      "viral": 0.4138
+      "viral": 0.326
     },
     {
       "id": "n-ce153ebe465",
@@ -673,7 +1461,7 @@
       "image": "imagenes/n-ce153ebe465.jpg",
       "link": "https://cincodias.elpais.com/companias/2026-11-16/indra-santa-barbara-y-el-desafio-de-hacer-blindados-que-alguien-quiera-comprar.html",
       "medio": "cincodias.elpais.com",
-      "viral": 0.4633
+      "viral": 0.3754
     },
     {
       "id": "n-fc241578b98",
@@ -689,7 +1477,7 @@
       "image": "imagenes/n-fc241578b98.jpg",
       "link": "https://elpais.com/cultura/2026-11-16/el-togado-de-pompelo-cambia-por-segunda-vez-de-sexo.html",
       "medio": "elpais.com",
-      "viral": 0.4631
+      "viral": 0.3753
     },
     {
       "id": "n-4d0be31da9b",
@@ -705,7 +1493,7 @@
       "image": "imagenes/n-4d0be31da9b.jpg",
       "link": "https://elpais.com/economia/negocios/2026-11-14/pisos-zulo-cuando-vivir-en-11-metros-es-cada-vez-mas-comun.html",
       "medio": "elpais.com",
-      "viral": 0.4631
+      "viral": 0.3752
     },
     {
       "id": "n-9285a4189ae",
@@ -721,7 +1509,7 @@
       "image": "imagenes/n-9285a4189ae.jpg",
       "link": "https://elpais.com/sociedad/2026-11-16/frente-amplio-propone-reconocer-la-familia-elegida-y-electricidad-gratis-en-las-horas-de-mayor-energia-solar.html",
       "medio": "elpais.com",
-      "viral": 0.4627
+      "viral": 0.3748
     },
     {
       "id": "n-4403efb122b",
@@ -737,7 +1525,7 @@
       "image": "imagenes/n-4403efb122b.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/el-mea-culpa-de-vinicius-aproveche-las-vacaciones-para-descansar-y-termine-entrenando-menos.html",
       "medio": "elpais.com",
-      "viral": 0.4622
+      "viral": 0.3744
     },
     {
       "id": "n-bfea40f9235",
@@ -753,7 +1541,7 @@
       "image": "imagenes/n-bfea40f9235.jpg",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/el-pp-propone-una-ley-de-nietos-para-que-los-exiliados-vascos-por-terrorismo-de-eta-puedan-votar-en-las-elecciones-autonomicas.html",
       "medio": "elpais.com",
-      "viral": 0.5488
+      "viral": 0.461
     },
     {
       "id": "n-613584e126d",
@@ -769,7 +1557,7 @@
       "image": "",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/el-pais-y-la-ser-organizan-un-debate-con-los-candidatos-de-toledo-a-las-generales-del-29-n.html",
       "medio": "elpais.com",
-      "viral": 0.4048
+      "viral": 0.317
     },
     {
       "id": "n-6b4c5ce5053",
@@ -785,7 +1573,7 @@
       "image": "imagenes/n-6b4c5ce5053.jpg",
       "link": "https://elpais.com/tecnologia/2026-11-16/la-caida-global-de-microsoft-se-debio-a-un-fallo-introducido-por-la-compania-hace-meses-y-que-tumbo-el-80-de-sus-servidores.html",
       "medio": "elpais.com",
-      "viral": 0.4542
+      "viral": 0.3664
     },
     {
       "id": "n-5a057798f37",
@@ -801,7 +1589,7 @@
       "image": "imagenes/n-5a057798f37.jpg",
       "link": "https://elpais.com/clima-y-medio-ambiente/2026-11-16/ya-no-quedan-negacionistas-del-cambio-climatico.html",
       "medio": "elpais.com",
-      "viral": 0.4482
+      "viral": 0.3604
     },
     {
       "id": "n-3b0bcb13cf7",
@@ -817,7 +1605,7 @@
       "image": "",
       "link": "https://elpais.com/cultura/musica/2026-11-16/quince-anos-despues-es-c-tangana-quien-presenta-a-agorazein.html",
       "medio": "elpais.com",
-      "viral": 0.3935
+      "viral": 0.3056
     },
     {
       "id": "n-e955b0a8434",
@@ -835,7 +1623,7 @@
       "image": "imagenes/n-e955b0a8434.jpg",
       "link": "https://elpais.com/clima-y-medio-ambiente/2026-11-16/la-cumbre-del-clima-abre-la-batalla-por-senalar-a-los-combustibles-fosiles-e-impulsar-la-electrificacion.html",
       "medio": "elpais.com",
-      "viral": 0.4871
+      "viral": 0.3992
     },
     {
       "id": "n-a8464ffee7b",
@@ -851,7 +1639,7 @@
       "image": "imagenes/n-a8464ffee7b.jpg",
       "link": "https://elpais.com/economia/2026-11-16/yolanda-diaz-retira-su-candidatura-a-la-direccion-general-de-la-oit.html",
       "medio": "elpais.com",
-      "viral": 0.4355
+      "viral": 0.3477
     },
     {
       "id": "n-fc36c96ec28",
@@ -867,7 +1655,7 @@
       "image": "imagenes/n-fc36c96ec28.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/xoan-vazquez-mao-secretario-eixo-atlantico-portugal-cumpliendo-compromisos-alta-velocidad-espana-/0003_202611G16P10991.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4168
+      "viral": 0.3289
     },
     {
       "id": "n-6567f33690f",
@@ -883,7 +1671,7 @@
       "image": "imagenes/n-6567f33690f.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/ourense-pagan-cuatro-veces-recogida-basura-soria/0003_202611G16P12991.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4168
+      "viral": 0.3289
     },
     {
       "id": "n-f1c15e4290d",
@@ -899,7 +1687,7 @@
       "image": "imagenes/n-f1c15e4290d.jpg",
       "link": "https://www.lavozdegalicia.es/noticia/galicia/2026/11/16/entrevista-vampiro/0003_202611G16P13991.htm",
       "medio": "lavozdegalicia.es",
-      "viral": 0.4168
+      "viral": 0.3289
     },
     {
       "id": "n-29ead4129d8",
@@ -915,7 +1703,7 @@
       "image": "imagenes/n-29ead4129d8.jpg",
       "link": "https://elpais.com/economia/2026-11-16/bruselas-se-reserva-la-aprobacion-del-ultimo-pago-del-plan-de-recuperacion-hasta-el-dia-despues-de-las-elecciones.html",
       "medio": "elpais.com",
-      "viral": 0.4672
+      "viral": 0.3793
     },
     {
       "id": "n-21341ca9a26",
@@ -931,7 +1719,7 @@
       "image": "imagenes/n-21341ca9a26.jpg",
       "link": "https://cincodias.elpais.com/opinion/2026-11-16/izquierdismo-infantil-o-cuando-te-caes-del-guindo.html",
       "medio": "cincodias.elpais.com",
-      "viral": 0.4206
+      "viral": 0.3328
     },
     {
       "id": "n-e41ef778338",
@@ -947,7 +1735,7 @@
       "image": "imagenes/n-e41ef778338.jpg",
       "link": "https://elpais.com/espana/elecciones-generales/2026-11-16/el-psoe-remonta-pero-no-altera-la-mayoria-de-la-derecha.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-afba48828fb",
@@ -963,7 +1751,7 @@
       "image": "imagenes/n-afba48828fb.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/envidia-profunda-del-bipolar-balompedico-vinicius-jr.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-97cad796f22",
@@ -979,7 +1767,7 @@
       "image": "imagenes/n-97cad796f22.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-16/el-futbol-tampoco-te-lo-va-a-solucionar.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-085d5877f5a",
@@ -995,7 +1783,7 @@
       "image": "imagenes/n-085d5877f5a.jpg",
       "link": "https://elpais.com/deportes/tenis/2026-11-16/alcaraz-y-los-conejos.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-f05c31c7b91",
@@ -1012,7 +1800,7 @@
       "image": "imagenes/n-f05c31c7b91.jpg",
       "link": "https://elpais.com/deportes/baloncesto/2026-11-16/el-perfeccionismo-sin-fin-de-joel-parra.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-8342c169104",
@@ -1028,7 +1816,7 @@
       "image": "imagenes/n-8342c169104.jpg",
       "link": "https://elpais.com/sociedad/2026-11-16/jung-yul-park-presidente-de-la-asociacion-medica-mundial-la-sanidad-en-espana-ha-sido-un-modelo-en-todo-el-mundo-pero-puede-dejar-de-serlo.html",
       "medio": "elpais.com",
-      "viral": 0.5113
+      "viral": 0.4235
     },
     {
       "id": "n-48de5f2a7b2",
@@ -1044,7 +1832,7 @@
       "image": "imagenes/n-48de5f2a7b2.jpg",
       "link": "https://elpais.com/salud-y-bienestar/2026-11-16/un-estudio-destapa-nueve-muertes-por-el-uso-de-nolotil-en-dos-anos-en-alicante-siete-de-ellas-de-pacientes-britanicos.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-c9083149286",
@@ -1060,7 +1848,7 @@
       "image": "imagenes/n-c9083149286.jpg",
       "link": "https://elpais.com/cultura/2026-11-16/ascension-y-caida-de-marc-bolan.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-7f639c835d8",
@@ -1076,7 +1864,7 @@
       "image": "imagenes/n-7f639c835d8.jpg",
       "link": "https://elpais.com/cultura/2026-11-16/leonor-watling-soy-afortunada-vivo-en-una-casa-que-comparto-con-el-banco.html",
       "medio": "elpais.com",
-      "viral": 0.4656
+      "viral": 0.3778
     },
     {
       "id": "n-7ef4a0adb5a",
@@ -1092,7 +1880,7 @@
       "image": "imagenes/n-7ef4a0adb5a.jpg",
       "link": "https://elpais.com/economia/negocios/entrevistas-afterwork/2026-11-16/margarita-madrigal-mas-que-vinos-cuando-vi-en-el-cine-la-pelicula-de-dicaprio-y-nuestra-botella-me-entraron-ganas-de-levantarme-y-decir-ese-vino-es-mio.html",
       "medio": "elpais.com",
-      "viral": 0.4199
+      "viral": 0.3321
     },
     {
       "id": "n-d2bdcc69c27",
@@ -1108,7 +1896,7 @@
       "image": "imagenes/n-d2bdcc69c27.jpg",
       "link": "https://elpais.com/deportes/futbol/2026-11-15/luis-de-la-fuente-el-que-venga-por-detras-que-lo-mejore.html",
       "medio": "elpais.com",
-      "viral": 0.3874
+      "viral": 0.2996
     },
     {
       "id": "n-93604ebe734",
@@ -1124,7 +1912,7 @@
       "image": "imagenes/n-93604ebe734.jpg",
       "link": "https://elpais.com/cultura/2026-11-15/sergio-ramirez-ingresa-en-la-rae-perdi-un-pais-pero-nunca-he-sido-extranjero-en-espana.html",
       "medio": "elpais.com",
-      "viral": 0.3617
+      "viral": 0.2738
     },
     {
       "id": "n-b5feb9eec49",
@@ -1140,7 +1928,7 @@
       "image": "imagenes/n-b5feb9eec49.jpg",
       "link": "https://elpais.com/espana/catalunya/2026-11-15/las-pinturas-profanas-de-sijena-se-despiden-del-mnac-son-estas-las-que-se-llevan-el-martes.html",
       "medio": "elpais.com",
-      "viral": 0.3252
+      "viral": 0.2373
     },
     {
       "id": "n-97f4f6afdfd",
@@ -1158,7 +1946,7 @@
       "image": "imagenes/n-97f4f6afdfd.jpg",
       "link": "https://elpais.com/cultura/2026-11-15/la-orquestra-de-la-comunitat-valenciana-narra-a-schumann-con-thomas-hengelbrock-antes-de-desembarcar-en-madrid.html",
       "medio": "elpais.com",
-      "viral": 0.3067
+      "viral": 0.2188
     },
     {
       "id": "n-42e317eba0b",
@@ -1174,7 +1962,7 @@
       "image": "imagenes/n-42e317eba0b.jpg",
       "link": "https://elpais.com/educacion/2026-11-15/la-soledad-del-profesor-en-el-aula-y-como-acabar-con-ella.html",
       "medio": "elpais.com",
-      "viral": 0.3045
+      "viral": 0.2167
     },
     {
       "id": "n-ef8a49814f6",
@@ -1190,7 +1978,7 @@
       "image": "imagenes/n-ef8a49814f6.jpg",
       "link": "https://elpais.com/clima-y-medio-ambiente/cambio-climatico/2026-11-15/que-es-el-nino-asi-enloquece-el-clima-global-una-pequena-region-tropical-del-pacifico.html",
       "medio": "elpais.com",
-      "viral": 0.3156
+      "viral": 0.2538
     },
     {
       "id": "n-7dfe1d17f90",
@@ -1206,7 +1994,7 @@
       "image": "imagenes/n-7dfe1d17f90.jpg",
       "link": "https://elpais.com/tecnologia/2026-11-15/tiktok-tiene-que-cambiar-ante-el-abuso-no-vale-el-silencio.html",
       "medio": "elpais.com",
-      "viral": 0.2699
+      "viral": 0.2081
     },
     {
       "id": "n-473603eaf92",
@@ -1371,15 +2159,15 @@
     }
   ],
   "top": [
-    "n-ecb0d010ab1",
-    "n-6f9ba3c4fee",
-    "n-bfea40f9235",
-    "n-7f9e184271c",
-    "n-2906fcab250",
-    "n-757023649fe",
-    "n-f710428c194",
-    "n-8342c169104",
-    "n-ffdebafea23",
-    "n-b37dad7f55b"
+    "n-ea0f1f0ba8b",
+    "n-2e776377ae7",
+    "n-8e0843ac8ca",
+    "n-d1dce83230f",
+    "n-5b58b7c1985",
+    "n-1c70566cde8",
+    "n-a75ff6e0199",
+    "n-d670fc3398d",
+    "n-0a1c8d65fe7",
+    "n-fad1f69439d"
   ]
 }
