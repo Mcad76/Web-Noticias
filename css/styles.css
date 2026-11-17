@@ -112,18 +112,20 @@ button, input, select { font-family: inherit; }
 
 /* ---------- Cabecera ---------- */
 .masthead {
+  position: relative;
+  z-index: 60;
   background: #fff;
   border-bottom: 4px solid var(--rojo);
 }
 .masthead__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   min-height: 86px;
   gap: 20px;
   padding: 12px 0;
 }
-.menu-wrap { position: relative; display: none; }
+.menu-wrap { position: relative; justify-self: start; }
 .menu-btn {
   display: none;
   background: none;
@@ -170,7 +172,7 @@ button, input, select { font-family: inherit; }
   text-transform: uppercase;
   color: var(--gris-med);
 }
-.brand { display: flex; flex-direction: column; align-items: center; }
+.brand { display: flex; flex-direction: column; align-items: center; justify-self: center; }
 .brand__main {
   font-family: var(--fuente-tit);
   font-weight: 900;
@@ -187,7 +189,7 @@ button, input, select { font-family: inherit; }
   color: var(--gris-med);
   text-transform: uppercase;
 }
-.masthead__tools { min-width: 220px; display: flex; justify-content: flex-end; }
+.masthead__tools { min-width: 220px; display: flex; justify-content: flex-end; gap: 8px; }
 .search-box {
   display: flex;
   align-items: center;
@@ -203,6 +205,12 @@ button, input, select { font-family: inherit; }
   background: transparent;
   outline: none;
   width: 170px;
+}
+.search-box--web input { width: 150px; }
+@media (max-width: 1100px) {
+  .masthead__tools { min-width: 0; }
+  .search-box input { width: 110px; }
+  .search-box--web input { width: 110px; }
 }
 
 /* ---------- Navegación ---------- */
@@ -243,14 +251,18 @@ button, input, select { font-family: inherit; }
 .nav__secciones a { border-top-color: var(--secc-color); }
 
 /* Menú móvil: la navegación se abre como desplegable desde el botón */
-.masthead { position: relative; z-index: 60; }
 @media (max-width: 700px) {
-  .menu-wrap { display: block; }
+  .masthead__inner { display: block; position: relative; text-align: center; padding-top: 14px; }
+  .menu-wrap { position: absolute; left: 0; top: 14px; }
   .menu-btn { display: block; }
-  .masthead__inner { flex-wrap: wrap; justify-content: center; }
-  .brand__main { font-size: clamp(26px, 8.5vw, 42px); line-height: .95; text-align: center; }
-  .brand__tag { font-size: 8px; letter-spacing: .16em; text-align: center; }
-  .masthead__tools { order: 3; min-width: 0; }
+  .brand { width: fit-content; margin: 0 auto; }
+  .brand__main { font-size: clamp(26px, 8.5vw, 42px); line-height: .95; }
+  .brand__tag { font-size: 8px; letter-spacing: .16em; }
+  .masthead__tools {
+    min-width: 0; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px; margin-top: 10px;
+  }
+  .search-box input, .search-box--web input { width: min(38vw, 160px); }
   .nav { display: none; }
 }
 
