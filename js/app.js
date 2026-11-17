@@ -233,6 +233,8 @@ const modal = document.getElementById('modal');
 function abrirNoticia(id) {
   const n = NOTICIAS.find(x => x.id === id);
   if (!n) return;
+  // Página estática real: texto en el HTML inicial y URL limpia e indexable
+  if (n.url) { window.location.href = n.url; return; }
   const sec = seccionPorId(n.sec);
   const f = FECHAS_PUBLICACION[n.id];
 

@@ -115,6 +115,24 @@ portal-noticias/
 └── actualizar_noticias.log       Registro de actualizaciones (no se sube)
 ```
 
+## SEO (páginas estáticas e indexación)
+
+- Cada noticia tiene su propia página real en `noticias/<titulo>-<id>.html`, con
+  el texto completo en el HTML inicial (no depende de JavaScript). Al pulsar
+  cualquier titular se abre esa URL permanente.
+- Cada página lleva `<title>` y `<meta description>` únicos, un solo `<h1>`,
+  `rel="canonical"`, Open Graph y un bloque JSON-LD `NewsArticle` con autor,
+  fecha e imagen.
+- `sitemap.xml` incluye la portada y las 674 noticias; `robots.txt` apunta al
+  sitemap. Regístralo en **Google Search Console** para acelerar la indexación.
+
+### Pendiente de decidir (requiere tu cuenta de GitHub)
+
+- **Dominio propio**: para usar un `.es`/`.com` hay que comprarlo y añadir un
+  `CNAME` en la raíz del repo + configurar el dominio en Settings → Pages.
+- **Renombrar el repo** `Web-Noticias-` → `Web-Noticias` quitaría el guion final
+  de la URL, pero cambia la dirección pública y rompe enlaces antiguos.
+
 ## Cómo verlo
 
 Ya publicado: **`https://Mcad76.github.io/Web-Noticias-/`**

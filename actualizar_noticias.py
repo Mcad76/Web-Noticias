@@ -34,6 +34,7 @@ HISTORICO = DATOS / 'historico.json'
 MANUALES = DATOS / 'noticias-manuales.json'   # se edita directamente en GitHub
 LOG = BASE / 'actualizar_noticias.log'
 
+BASE_URL = 'https://mcad76.github.io/Web-Noticias-/'
 ELP = 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/'
 UA = 'Mozilla/5.0 (compatible; TuVecinaCotilla/2.0; +RSS)'
 TIMEOUT = 20
@@ -519,8 +520,8 @@ def generar_js(historico):
         '',
         "const A = (id, sec, slot, titulo, entradilla, cuerpo, autor = 'Redacción',",
         "          fecha = '', image = '', link = '', medio = '', viral = 0,",
-        "          region = 'nacional') => ({",
-        '  id, sec, slot, titulo, entradilla, cuerpo, autor, fecha, image, link, medio, viral, region',
+        "          region = 'nacional', url = '') => ({",
+        '  id, sec, slot, titulo, entradilla, cuerpo, autor, fecha, image, link, medio, viral, region, url',
         '});',
         '',
         'const NOTICIAS = [',
@@ -537,10 +538,146 @@ def generar_js(historico):
                 f"[{cuerpo}], {jstr(n.get('autor'))}, {jstr(n.get('fecha'))}, "
                 f"{jstr(n.get('image'))}, {jstr(n.get('link'))}, "
                 f"{jstr(n.get('medio'))}, {n.get('viral', 0)}, "
-                f"{jstr(n.get('region', 'nacional'))}),"
+                f"{jstr(n.get('region', 'nacional'))}, {jstr(url_para(n))}),"
             )
     lines += ['];', '']
     JS.write_text('\n'.join(lines), encoding='utf-8')
+
+
+def slug_para(n):
+    base = re.sub(r'[^a-z0-9]+', '-', normalizar_titulo(n['titulo'])).strip('-')[:58].rstrip('-')
+    return (base + '-' + n['id']) if base else n['id']
+
+
+def url_para(n):
+    return BASE_URL + 'noticias/' + slug_para(n) + '.html'
+
+
+def generar_paginas(historico):
+    """Crea una página HTML real por noticia, indexable por buscadores."""
+    carpeta = BASE / 'noticias'
+    carpeta.mkdir(exist_ok=True)
+    usados = set()
+    e = html.escape
+
+    estilos = '''
+<style>
+body{margin:0;background:#eee;color:#111;font-family:Roboto,Arial,sans-serif;line-height:1.7}
+.cabecera{background:#fff;border-bottom:4px solid #e30613;padding:18px 5%}
+.cabecera a{color:#e30613;font-weight:700;text-decoration:none;font-family:'Roboto Condensed',Arial,sans-serif;font-size:22px;text-transform:uppercase}
+.articulo{max-width:900px;margin:28px auto;background:#fff;padding:32px clamp(20px,5vw,56px) 48px;box-shadow:0 2px 14px rgba(0,0,0,.12)}
+.seccion{display:inline-block;color:#fff;font:700 13px 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;padding:4px 10px;letter-spacing:.04em}
+h1{font:900 clamp(30px,5vw,52px)/1.05 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;margin:16px 0}
+.meta{color:#777;font-size:13px;text-transform:uppercase;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:10px 0;margin-bottom:24px}
+img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
+.entradilla{font-size:20px;font-weight:700;line-height:1.5;border-left:4px solid #e30613;padding-left:16px}
+.cuerpo p{font-size:19px;line-height:1.85;margin:0 0 22px}
+.fuente,.volver{display:inline-block;margin:16px 12px 0 0;color:#b80510;font-weight:700}
+.pie{max-width:900px;margin:0 auto 40px;padding:0 20px;color:#666;font-size:13px}
+</style>'''
+
+    for n in historico['noticias']:
+        nombre = slug_para(n) + '.html'
+        usados.add(nombre)
+        url = url_para(n)
+        titulo = n['titulo']
+        titulo_seo = titulo if len(titulo) <= 60 else titulo[:57].rsplit(' ', 1)[0] + '…'
+        descripcion = limpiar(n.get('entradilla') or titulo, 155)
+        imagen = n.get('image') or ''
+        img_url = BASE_URL + imagen if imagen else ''
+        fecha = n.get('fecha', '')
+        autor = n.get('autor') or 'Redacción'
+        medio = n.get('medio') or 'Tu Vecina Cotilla'
+        info_sec = next((s for s in SECCIONES if s['id'] == n['sec']), None)
+        nombre_sec = info_sec['nombre'] if info_sec else n['sec']
+        color = info_sec['color'] if info_sec else '#e30613'
+
+        ld = {
+            '@context': 'https://schema.org',
+            '@type': 'NewsArticle',
+            'headline': titulo,
+            'description': descripcion,
+            'datePublished': fecha,
+            'dateModified': fecha,
+            'author': {'@type': 'Person', 'name': autor},
+            'publisher': {'@type': 'Organization', 'name': 'Tu Vecina Cotilla'},
+            'mainEntityOfPage': url,
+            'url': url,
+            'articleSection': nombre_sec,
+        }
+        if img_url:
+            ld['image'] = [img_url]
+        ld_json = json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
+
+        pagina = [
+            '<!DOCTYPE html>', '<html lang="es">', '<head>',
+            '  <meta charset="UTF-8">',
+            '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
+            f'  <title>{e(titulo_seo)}</title>',
+            f'  <meta name="description" content="{e(descripcion, quote=True)}">',
+            f'  <link rel="canonical" href="{url}">',
+            f'  <meta property="og:type" content="article">',
+            f'  <meta property="og:title" content="{e(titulo, quote=True)}">',
+            f'  <meta property="og:description" content="{e(descripcion, quote=True)}">',
+            f'  <meta property="og:url" content="{url}">',
+        ]
+        if img_url:
+            pagina.append(f'  <meta property="og:image" content="{img_url}">')
+        pagina += [
+            f'  <meta name="twitter:card" content="summary_large_image">',
+            '  <script type="application/ld+json">' + ld_json + '</script>',
+            '  <link rel="stylesheet" href="../css/styles.css">',
+            estilos,
+            '</head>', '<body>',
+            '  <div class="cabecera"><a href="../index.html">Tu Vecina Cotilla — Inicio</a></div>',
+            '  <article class="articulo">',
+            f'    <span class="seccion" style="background:{color}">{e(nombre_sec)}</span>',
+            f'    <h1>{e(titulo)}</h1>',
+            f'    <div class="meta">{e(autor)} · {e(fecha[:10])} · {e(medio)}</div>',
+        ]
+        if imagen:
+            pagina.append(f'    <img class="portada" src="../{imagen}" alt="{e(titulo, quote=True)}">')
+        pagina.append(f'    <p class="entradilla">{e(n.get("entradilla") or titulo)}</p>')
+        pagina.append('    <div class="cuerpo">')
+        for parrafo in n.get('cuerpo', []):
+            pagina.append(f'      <p>{e(parrafo)}</p>')
+        pagina.append('    </div>')
+        if n.get('link'):
+            pagina.append(
+                f'    <a class="fuente" href="{e(n["link"], quote=True)}" target="_blank" '
+                f'rel="noopener noreferrer">Leer la noticia original en {e(medio)} ↗</a>')
+        pagina += [
+            '    <a class="volver" href="../index.html">← Volver a la portada</a>',
+            '  </article>',
+            '  <div class="pie">Tu Vecina Cotilla · Noticias de fuentes públicas RSS</div>',
+            '</body>', '</html>',
+        ]
+        (carpeta / nombre).write_text('\n'.join(pagina), encoding='utf-8')
+
+    borradas = 0
+    for f in carpeta.glob('*.html'):
+        if f.name not in usados:
+            f.unlink()
+            borradas += 1
+    if borradas:
+        log(f'Páginas estáticas: se borraron {borradas} archivos sin uso')
+
+
+def generar_sitemap(historico):
+    lineas = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <url><loc>' + BASE_URL + '</loc><changefreq>daily</changefreq><priority>1.0</priority></url>',
+    ]
+    for n in historico['noticias']:
+        fecha = (n.get('fecha') or '')[:10]
+        lineas.append('  <url><loc>' + url_para(n) + '</loc><lastmod>' + fecha +
+                      '</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>')
+    lineas.append('</urlset>')
+    (BASE / 'sitemap.xml').write_text('\n'.join(lineas), encoding='utf-8')
+    (BASE / 'robots.txt').write_text(
+        'User-agent: *\nAllow: /\n\nSitemap: ' + BASE_URL + 'sitemap.xml\n',
+        encoding='utf-8')
 
 
 def limpiar_imagenes(noticias):
@@ -752,6 +889,8 @@ def main():
     hist['actualizado'] = ahora.isoformat()
     guardar_historico(hist)
     generar_js(hist)
+    generar_paginas(hist)
+    generar_sitemap(hist)
     limpiar_imagenes(noticias)
     log(f'=== Fin: {nuevas} nuevas únicas, {len(noticias)} en archivo, '
         f'{sum(1 for n in noticias if n.get("image"))} con imagen, Top {len(top_ids)} ===')
