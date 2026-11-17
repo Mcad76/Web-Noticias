@@ -43,7 +43,15 @@
   <!-- Cabecera -->
   <header class="masthead">
     <div class="wrap masthead__inner">
-      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú de secciones">&#9776;</button>
+      <div class="menu-wrap">
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menú de secciones"
+                aria-haspopup="true" aria-expanded="false" aria-controls="menu-desplegable">&#9776;</button>
+        <nav class="menu-desplegable" id="menu-desplegable" aria-label="Menú de secciones" hidden>
+          <a href="#inicio" class="menu-desplegable__item">Inicio</a>
+          <div id="menu-secciones"></div>
+          <a href="#archivo" class="menu-desplegable__item">Archivo</a>
+        </nav>
+      </div>
       <a href="#inicio" class="brand" aria-label="Tu Vecina Cotilla, inicio">
         <span class="brand__main">TU VECINA COTILLA</span>
         <span class="brand__tag">LA ACTUALIDAD, POR TEMAS Y SIN FILTRO</span>

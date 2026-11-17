@@ -123,12 +123,52 @@ button, input, select { font-family: inherit; }
   gap: 20px;
   padding: 12px 0;
 }
+.menu-wrap { position: relative; display: none; }
 .menu-btn {
   display: none;
   background: none;
   border: 0;
   font-size: 26px;
+  line-height: 1;
+  padding: 6px;
   cursor: pointer;
+}
+
+/* Menú desplegable del botón de 3 barras */
+.menu-desplegable {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 200;
+  min-width: 230px;
+  max-width: 86vw;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--rojo);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  padding: 6px 0;
+}
+.menu-desplegable[hidden] { display: none; }
+.menu-desplegable a {
+  display: block;
+  padding: 11px 18px;
+  font-family: var(--fuente-tit);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  border-left: 4px solid var(--secc-color, transparent);
+  transition: background .15s;
+}
+.menu-desplegable a:hover,
+.menu-desplegable a:focus { background: var(--gris); outline: none; }
+.menu-desplegable__titulo {
+  padding: 8px 18px 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gris-med);
 }
 .brand { display: flex; flex-direction: column; align-items: center; }
 .brand__main {
@@ -202,17 +242,16 @@ button, input, select { font-family: inherit; }
 .nav__secciones { display: flex; }
 .nav__secciones a { border-top-color: var(--secc-color); }
 
-/* Menú móvil */
-.nav.abierto .nav__inner { flex-wrap: wrap; }
+/* Menú móvil: la navegación se abre como desplegable desde el botón */
+.masthead { position: relative; z-index: 60; }
 @media (max-width: 700px) {
+  .menu-wrap { display: block; }
   .menu-btn { display: block; }
   .masthead__inner { flex-wrap: wrap; justify-content: center; }
   .brand__main { font-size: clamp(26px, 8.5vw, 42px); line-height: .95; text-align: center; }
   .brand__tag { font-size: 8px; letter-spacing: .16em; text-align: center; }
   .masthead__tools { order: 3; min-width: 0; }
-  .nav__inner { display: none; }
-  .nav.abierto .nav__inner { display: flex; }
-  .nav__link, .nav__secciones a { font-size: 14px; padding: 0 10px; }
+  .nav { display: none; }
 }
 
 /* ---------- Última hora ---------- */

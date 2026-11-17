@@ -122,11 +122,17 @@ function construirNavegacion() {
   const nav = document.getElementById('nav-secciones');
   const accesos = document.getElementById('accesos-rapidos');
   const selector = document.getElementById('archivo-seccion');
+  const menuSecciones = document.getElementById('menu-secciones');
+  if (menuSecciones) {
+    menuSecciones.innerHTML = '<div class="menu-desplegable__titulo">Secciones</div>';
+  }
   SECCIONES.forEach(s => {
     nav.insertAdjacentHTML('beforeend',
       `<a href="#${s.id}" style="--secc-color:${s.color}">${s.nombre}</a>`);
     if (accesos) accesos.insertAdjacentHTML('beforeend',
       `<a class="acceso" href="#${s.id}" style="--secc-color:${s.color}">${s.nombre}</a>`);
+    if (menuSecciones) menuSecciones.insertAdjacentHTML('beforeend',
+      `<a href="#${s.id}" style="--secc-color:${s.color}">${s.nombre}</a>`);
     selector.insertAdjacentHTML('beforeend', `<option value="${s.id}">${s.nombre}</option>`);
   });
 }
@@ -285,12 +291,36 @@ document.getElementById('buscador-top').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') document.getElementById('archivo').scrollIntoView({ behavior: 'smooth' });
 });
 
-document.getElementById('menu-btn').addEventListener('click', () => {
-  document.getElementById('nav').classList.toggle('abierto');
+/* ---------- Menú desplegable de 3 barras ---------- */
+const menuBtn = document.getElementById('menu-btn');
+const menuDesplegable = document.getElementById('menu-desplegable');
+
+function alternarMenu(forzar) {
+  const abierto = typeof forzar === 'boolean' ? forzar : menuDesplegable.hidden;
+  menuDesplegable.hidden = !abierto;
+  menuBtn.setAttribute('aria-expanded', String(abierto));
+  menuBtn.setAttribute('aria-label', abierto ? 'Cerrar menú de secciones' : 'Abrir menú de secciones');
+  menuBtn.innerHTML = abierto ? '&#10005;' : '&#9776;';
+}
+
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  alternarMenu();
 });
 
-document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('nav').classList.remove('abierto'));
+menuDesplegable.addEventListener('click', (e) => {
+  if (e.target.closest('a')) alternarMenu(false);
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.menu-wrap')) alternarMenu(false);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !menuDesplegable.hidden) {
+    alternarMenu(false);
+    menuBtn.focus();
+  }
 });
 
 /* ---------- Inicio ---------- */
