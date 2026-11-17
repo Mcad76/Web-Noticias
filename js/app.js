@@ -243,7 +243,6 @@ function abrirNoticia(id) {
     .slice(0, 2);
 
   document.getElementById('modal-contenido').innerHTML = `
-    <button class="modal__close" aria-label="Cerrar noticia" data-cerrar>&times;</button>
     <img class="modal__img" src="${n.image}" alt="${n.titulo}" onerror="imgFallback(this,'${sec.color}')">
     <div class="modal__contenido-pad" style="--secc-color:${sec.color}">
       <span class="modal__tag">${sec.nombre}</span>

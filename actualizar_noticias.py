@@ -16,7 +16,7 @@ import html
 import time
 import hashlib
 import urllib.request
-from urllib.parse import quote
+from urllib.parse import quote, urlparse, parse_qs
 import xml.etree.ElementTree as ET
 from io import BytesIO
 from pathlib import Path
@@ -38,10 +38,10 @@ ELP = 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/'
 UA = 'Mozilla/5.0 (compatible; TuVecinaCotilla/2.0; +RSS)'
 TIMEOUT = 20
 MAX_POR_SECCION = 12      # candidatos por sección y fuente
-MAX_IMAGENES = 160        # descargas de imagen por ejecución
+MAX_IMAGENES = 500        # descargas de imagen por ejecución
 DIAS_HISTORICO = 30
 MAX_EN_ARCHIVO = 450
-MAX_POR_REGION = 21       # noticias por comunidad (3 x 7 secciones)
+MAX_POR_REGION = 42       # candidatos por comunidad (3 x 7 secciones)
 TOP_N = 10                # noticias del ranking diario
 
 # Orden de captura de las secciones nacionales
@@ -108,7 +108,13 @@ REGIONES = [
     {'id': 'navarra',             'nombre': 'Navarra'},
     {'id': 'pais-vasco',          'nombre': 'País Vasco'},
 ]
-GOOGLE_NEWS = 'https://news.google.com/rss/search?q={q}&hl=es&gl=ES&ceid=ES:es'
+# Bing News RSS: incluye imagen y el enlace original del artículo
+BING_NEWS = 'https://www.bing.com/news/search?q={q}&format=rss'
+CONSULTAS_REGION = [
+    '{nombre} noticias',
+    '{nombre} política economía',
+    '{nombre} deportes sociedad cultura tecnología',
+]
 
 # Detección de tema por palabras del titular, para no etiquetar mal una noticia
 DETECTAR = [
@@ -322,8 +328,15 @@ def parsear_feed(url, sec, keywords, fallback):
     return salida
 
 
-def parsear_feed_region(url, region, nombre_region):
-    """Noticias locales de una comunidad desde Google News RSS."""
+def imagen_de_bing(item):
+    for c in item:
+        if local(c.tag) == 'image' and c.text and c.text.startswith('http'):
+            return c.text
+    return ''
+
+
+def parsear_feed_region(url, region, nombre_region, forzar_sec=None):
+    """Noticias locales desde Bing News RSS (con foto y enlace original)."""
     salida = []
     try:
         texto = fetch(url).decode('utf-8', 'ignore')
@@ -335,37 +348,59 @@ def parsear_feed_region(url, region, nombre_region):
 
     for item in root.findall('.//item'):
         titulo = limpiar(hijo_texto(item, 'title'), 180)
-        link = hijo_texto(item, 'link')
-        if not titulo or not link:
+        enlace = hijo_texto(item, 'link')
+        if not titulo or not enlace:
             continue
-        fuente = item.find('source')
-        medio = limpiar(fuente.text, 60) if fuente is not None and fuente.text else ''
-        if medio and titulo.endswith(' - ' + medio):
+        # El enlace de Bing lleva la URL real en el parámetro ?url=
+        link = parse_qs(urlparse(enlace).query).get('url', [enlace])[0]
+        medio = limpiar(hijo_texto(item, 'source'), 60) or 'la fuente original'
+        if titulo.endswith(' - ' + medio):
             titulo = titulo[:-(len(medio) + 3)].strip()
+        entradilla = limpiar(hijo_texto(item, 'description'), 240) or titulo
         detectada = detectar_categoria(titulo)
+        sec = forzar_sec or detectada or 'sociedad'
         salida.append({
             'id': id_para(link),
-            'sec': detectada or 'sociedad',
+            'sec': sec,
             'region': region,
             'slot': 0,
             'titulo': titulo,
-            'entradilla': f'Actualidad de {nombre_region} · {medio}' if medio
-                          else f'Actualidad de {nombre_region}',
-            'cuerpo': [f'Noticia publicada por {medio}. Consulta el artículo original '
-                       f'en {medio} para más información.' if medio else
-                       'Consulta el artículo original para más información.'],
+            'entradilla': entradilla,
+            'cuerpo': [entradilla,
+                       f'Noticia publicada por {medio}. Consulta el artículo original '
+                       f'en {medio} para más información.'],
             'autor': 'Redacción',
             'fecha': fecha_de(item),
             'image': '',
             'link': link,
-            'medio': medio or 'Google News',
+            'medio': medio,
             'viral': 0,
             '_detectada': bool(detectada),
             '_score': 0,
-            '_imgurl': '',
+            '_imgurl': imagen_de_bing(item),
             '_fuentes': 1,
         })
     return salida
+
+
+def imagen_respaldo(titulo):
+    """Busca una imagen real por titular cuando el feed no la trae."""
+    palabras = titulo.split()
+    consultas = [' '.join(palabras[:8]), ' '.join(palabras[:5]), titulo[:60]]
+    for consulta in consultas:
+        if not consulta:
+            continue
+        try:
+            url = BING_NEWS.format(q=quote(consulta))
+            texto = fetch(url).decode('utf-8', 'ignore')
+            root = ET.fromstring(texto.encode('utf-8'))
+            for item in root.findall('.//item'):
+                img = imagen_de_bing(item)
+                if img:
+                    return img
+        except Exception:
+            pass
+    return ''
 
 
 # ------------------------------------------------------------------ ranking
@@ -534,6 +569,8 @@ def main():
     ids_manuales = {n['id'] for n in manuales}
     noticias = [n for n in noticias if n['id'] not in ids_manuales]
     noticias.extend(manuales)
+    # Todas las noticias publicadas deben tener foto real
+    noticias = [n for n in noticias if n.get('image')]
 
     corte = (ahora - timedelta(days=DIAS_HISTORICO)).isoformat()
     noticias = [n for n in noticias if n.get('fecha', '') >= corte]
@@ -561,23 +598,55 @@ def main():
                     pool[clave] = n
         log(f'{sec:11} -> {len([v for v in pool.values() if v["sec"] == sec]):2} candidatos únicos')
 
-    # 1b) Noticias locales de cada comunidad (Google News RSS)
+    # 1a) Suplemento nacional con Bing: asegura 3 noticias por sección y foto
+    for s in SECCIONES:
+        url = BING_NEWS.format(q=quote('España ' + s['nombre']))
+        for n in parsear_feed_region(url, 'nacional', 'España', forzar_sec=s['id']):
+            clave = normalizar_link(n['link'])
+            if clave not in pool:
+                n['_clave'] = clave
+                pool[clave] = n
+
+    # 1b) Noticias locales de cada comunidad (Bing News RSS, con imagen)
     for reg in REGIONES[1:]:
-        url = GOOGLE_NEWS.format(q=quote(reg['nombre'] + ' when:7d'))
-        candidatos = parsear_feed_region(url, reg['id'], reg['nombre'])
+        vistos = set()
+        candidatos = []
+        for plantilla in CONSULTAS_REGION:
+            consulta = plantilla.format(nombre=reg['nombre'])
+            for n in parsear_feed_region(
+                    BING_NEWS.format(q=quote(consulta)), reg['id'], reg['nombre']):
+                clave = normalizar_link(n['link'])
+                if clave in vistos:
+                    continue
+                vistos.add(clave)
+                candidatos.append(n)
         candidatos.sort(key=lambda n: n['fecha'], reverse=True)
         candidatos = candidatos[:MAX_POR_REGION]
         por_sec = {s['id']: [] for s in SECCIONES}
         sin_sec = []
         for n in candidatos:
-            if n.get('_detectada'):
+            if n.get('_detectada') and len(por_sec[n['sec']]) < 3:
                 por_sec[n['sec']].append(n)
             else:
                 sin_sec.append(n)
-        # Repartir el resto para que cada sección tenga hasta 3 noticias
         for s in SECCIONES:
             while len(por_sec[s['id']]) < 3 and sin_sec:
                 por_sec[s['id']].append(sin_sec.pop(0))
+        # Si aún falta material en alguna sección, se pide más a Bing
+        for s in SECCIONES:
+            if len(por_sec[s['id']]) >= 3:
+                continue
+            consulta = reg['nombre'] + ' ' + s['nombre']
+            extra = parsear_feed_region(
+                BING_NEWS.format(q=quote(consulta)), reg['id'], reg['nombre'],
+                forzar_sec=s['id'])
+            for n in extra:
+                if len(por_sec[s['id']]) >= 3:
+                    break
+                clave = normalizar_link(n['link'])
+                if clave not in vistos:
+                    vistos.add(clave)
+                    por_sec[s['id']].append(n)
         for items in por_sec.values():
             for n in items:
                 clave = normalizar_link(n['link'])
@@ -599,8 +668,14 @@ def main():
             url = n['_imgurl']
             if not url and n.get('region', 'nacional') == 'nacional':
                 url = og_image(n['link'])
+            if not url:
+                url = imagen_respaldo(n['titulo'])
             if url:
                 n['image'] = descargar_imagen(url, n['id'])
+                if not n['image']:
+                    url2 = imagen_respaldo(n['titulo'])
+                    if url2 and url2 != url:
+                        n['image'] = descargar_imagen(url2, n['id'])
                 if n['image']:
                     restantes[0] -= 1
         if not antiguo:
@@ -641,6 +716,37 @@ def main():
             if n['id'] not in top_ids and len(top_ids) < TOP_N:
                 top_ids.append(n['id'])
 
+    # 4b) Rellenar secciones vacías: todas las pestañas deben tener 3 por sección
+    ids_actuales = {n['id'] for n in noticias}
+    for reg in REGIONES:
+        for s in SECCIONES:
+            while len([n for n in noticias
+                       if n['region'] == reg['id'] and n['sec'] == s['id']]) < 3:
+                base = reg['nombre'] if reg['id'] != 'nacional' else 'España'
+                consulta = base + ' ' + s['nombre']
+                candidatos = parsear_feed_region(
+                    BING_NEWS.format(q=quote(consulta)), reg['id'], reg['nombre'],
+                    forzar_sec=s['id'])
+                anadido = False
+                for n in candidatos:
+                    if n['id'] in ids_actuales:
+                        continue
+                    url = n['_imgurl'] or imagen_respaldo(n['titulo'])
+                    img = descargar_imagen(url, n['id']) if url else ''
+                    if not img:
+                        continue
+                    n['image'] = img
+                    n['viral'] = calcular_viral(n, menciones, ahora)
+                    noticias.append({k: v for k, v in n.items() if not k.startswith('_')})
+                    ids_actuales.add(n['id'])
+                    anadido = True
+                    break
+                if not anadido:
+                    break
+    noticias.sort(key=lambda n: n['fecha'], reverse=True)
+
+    # Garantía final: ninguna noticia sin foto llega a la web
+    noticias = [n for n in noticias if n.get('image')]
     hist['noticias'] = noticias
     hist['top'] = top_ids
     hist['actualizado'] = ahora.isoformat()

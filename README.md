@@ -9,8 +9,10 @@ actualizado íntegramente desde GitHub:
 El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 
 - `actualizar_noticias.py` descarga noticias reales de fuentes RSS públicas:
-  **El País** para la pestaña Nacional y **Google News RSS** para cada
-  comunidad autónoma (configurable en `FUENTES` y `REGIONES`).
+  **El País** para la pestaña Nacional y **Bing News RSS** para cada comunidad
+  autónoma (configurable en `FUENTES` y `REGIONES`). Bing aporta la foto original
+  y el enlace al medio. Todas las noticias publicadas tienen imagen y cada
+  sección de cada pestaña se rellena automáticamente con 3 noticias.
 - **Deduplicación global**: un mismo artículo se publica una sola vez, aunque
   aparezca en varios feeds o encaje en varias secciones.
 - **Portada por categorías**: cada sección muestra sus **3 noticias más

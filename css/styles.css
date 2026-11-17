@@ -176,11 +176,17 @@ button, input, select { font-family: inherit; }
   text-transform: uppercase;
 }
 .masthead__tools {
-  min-width: 0; display: flex; flex-wrap: wrap;
-  justify-content: center; gap: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 620px;
 }
 .search-box {
   display: flex;
+  flex: 1 1 0;
+  min-width: 0;
   align-items: center;
   gap: 8px;
   background: var(--gris);
@@ -193,11 +199,8 @@ button, input, select { font-family: inherit; }
   border: 0;
   background: transparent;
   outline: none;
-  width: 130px;
-}
-.search-box--web input { width: 130px; }
-@media (max-width: 1100px) {
-  .search-box input, .search-box--web input { width: 100px; }
+  width: 100%;
+  min-width: 0;
 }
 
 /* ---------- Navegación ---------- */
@@ -243,7 +246,7 @@ button, input, select { font-family: inherit; }
   .menu-wrap { top: 14px; }
   .brand__main { font-size: clamp(26px, 8.5vw, 42px); line-height: .95; }
   .brand__tag { font-size: 8px; letter-spacing: .16em; }
-  .search-box input, .search-box--web input { width: min(40vw, 150px); }
+  .search-box { padding: 7px 9px; gap: 5px; font-size: 12px; }
   .nav { display: none; }
 }
 
@@ -521,7 +524,7 @@ button, input, select { font-family: inherit; }
 .modal__overlay { position: absolute; inset: 0; background: rgba(0,0,0,.82); }
 .modal__panel {
   position: relative;
-  width: min(900px, 100%);
+  width: min(1160px, 100%);
   max-height: 92vh;
   overflow-y: auto;
   background: #fff;
@@ -548,7 +551,7 @@ button, input, select { font-family: inherit; }
 }
 .modal__close:hover { background: var(--rojo-osc); }
 .modal__img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; background: #ddd; }
-.modal__contenido-pad { padding: 24px clamp(20px, 5vw, 54px) 40px; }
+.modal__contenido-pad { padding: 24px clamp(20px, 4vw, 72px) 48px; }
 .modal__tag {
   display: inline-block;
   color: #fff;
@@ -588,7 +591,7 @@ button, input, select { font-family: inherit; }
   padding-left: 16px;
   border-left: 4px solid var(--rojo);
 }
-.modal__cuerpo p { font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: #222; }
+.modal__cuerpo p { font-size: 18px; line-height: 1.8; margin: 0 0 20px; color: #222; }
 .modal__cuerpo p::first-letter { font-weight: 700; }
 .relacionadas { margin-top: 36px; border-top: 3px solid var(--negro); padding-top: 14px; }
 .relacionadas h3 { font-family: var(--fuente-tit); text-transform: uppercase; font-size: 20px; margin: 0 0 10px; }
@@ -840,14 +843,6 @@ button, input, select { font-family: inherit; }
   box-shadow: 0 2px 6px rgba(0,0,0,.05);
 }
 .accesos__inner { display: flex; align-items: center; gap: 14px; min-height: 46px; }
-.accesos__titulo {
-  flex: 0 0 auto;
-  font-family: var(--fuente-tit);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .18em;
-  color: #999;
-}
 .accesos__lista {
   display: flex;
   gap: 8px;
