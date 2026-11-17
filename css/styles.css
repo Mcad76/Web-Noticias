@@ -49,10 +49,66 @@ button, input, select { font-family: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 32px;
+  min-height: 34px;
 }
-.topbar__edicion { color: #fff; }
-.topbar__right { text-transform: uppercase; letter-spacing: .04em; }
+.topbar__fecha {
+  color: #fff;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.topbar__edicion { color: #8f8f8f; }
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.visitantes {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  background: #1b1b1b;
+  letter-spacing: .02em;
+}
+.visitantes__icono { font-size: 12px; opacity: .75; }
+.visitantes__numero {
+  color: #fff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.visitantes__label {
+  color: #8f8f8f;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.topbar__suscribete {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: var(--rojo);
+  color: #fff;
+  font-family: var(--fuente-tit);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .15s;
+}
+.topbar__suscribete:hover { background: #b3121d; }
+@media (max-width: 820px) {
+  .topbar__edicion { display: none; }
+}
+@media (max-width: 480px) {
+  .topbar__inner { gap: 8px; }
+  .topbar__fecha { font-size: 11px; }
+  .visitantes__label { display: none; }
+}
 
 /* ---------- Cabecera ---------- */
 .masthead {

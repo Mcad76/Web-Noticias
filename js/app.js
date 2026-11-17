@@ -307,3 +307,22 @@ construirNavegacion();
 construirTicker();
 construirSecciones();
 construirArchivo();
+
+/* ---------- Contador de visitas ---------- */
+(async function contadorDeVisitas() {
+  const hueco = document.getElementById('contador-visitas');
+  if (!hueco) return;
+  try {
+    const respuesta = await fetch(
+      'https://countapi.mileshilliard.com/api/v1/hit/tuvecinacotilla-visitas-2026',
+      { cache: 'no-store' }
+    );
+    if (!respuesta.ok) throw new Error('Contador no disponible');
+    const datos = await respuesta.json();
+    hueco.textContent = new Intl.NumberFormat('es-ES').format(datos.value);
+  } catch (error) {
+    hueco.textContent = '—';
+    hueco.title = 'El contador no está disponible temporalmente';
+    console.warn('Contador de visitas:', error);
+  }
+})();
