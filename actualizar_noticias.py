@@ -16,6 +16,7 @@ import html
 import time
 import hashlib
 import urllib.request
+from urllib.parse import quote
 import xml.etree.ElementTree as ET
 from io import BytesIO
 from pathlib import Path
@@ -39,13 +40,13 @@ TIMEOUT = 20
 MAX_POR_SECCION = 12      # candidatos por sección y fuente
 MAX_IMAGENES = 160        # descargas de imagen por ejecución
 DIAS_HISTORICO = 30
-MAX_EN_ARCHIVO = 240
+MAX_EN_ARCHIVO = 450
+MAX_POR_REGION = 21       # noticias por comunidad (3 x 7 secciones)
 TOP_N = 10                # noticias del ranking diario
 
-# Orden de captura: primero las secciones con feed propio, para que las que
-# comparten feed (industria, pesca) no se queden sin material.
+# Orden de captura de las secciones nacionales
 ORDEN_CAPTURA = ['politica', 'deportes', 'sociedad', 'tecnologia',
-                 'cultura', 'economia', 'industria', 'pesca']
+                 'cultura', 'economia', 'industria']
 
 IMPORTANTES = [
     'gobierno', 'elecciones', 'electoral', 'crisis', 'guerra', 'ue', 'espana',
@@ -64,7 +65,6 @@ SECCIONES = [
     {'id': 'politica',   'nombre': 'Política',   'color': '#1565c0'},
     {'id': 'deportes',   'nombre': 'Deportes',   'color': '#2e7d32'},
     {'id': 'sociedad',   'nombre': 'Sociedad',   'color': '#c2185b'},
-    {'id': 'pesca',      'nombre': 'Pesca',      'color': '#00838f'},
     {'id': 'tecnologia', 'nombre': 'Tecnología', 'color': '#6a1b9a'},
     {'id': 'economia',   'nombre': 'Economía',   'color': '#f9a825'},
     {'id': 'cultura',    'nombre': 'Cultura',    'color': '#5d4037'},
@@ -78,19 +78,37 @@ FUENTES = {
     'politica':   [(ELP + 'section/espana/portada', [], 'politica')],
     'deportes':   [(ELP + 'section/deportes/portada', [], 'deportes')],
     'sociedad':   [(ELP + 'section/sociedad/portada', [], 'sociedad')],
-    'pesca':      [('https://www.lavozdegalicia.es/galicia/index.xml',
-                    ['pesca', 'pescado', 'pescador', 'flota', 'lonja',
-                     'acuicultura', 'atún', 'sardina', 'ría', 'marisc'], 'sociedad'),
-                   (ELP + 'section/economia/portada',
-                    ['pesca', 'pescado', 'pescador', 'flota', 'lonja',
-                     'acuicultura', 'atún', 'sardina'], 'economia')],
     'tecnologia': [(ELP + 'section/tecnologia/portada', [], 'tecnologia')],
     'economia':   [(ELP + 'section/economia/portada', [], 'economia')],
     'cultura':    [(ELP + 'section/cultura/portada', [], 'cultura')],
 }
 
 # Secciones "estrictas": solo se aplican si el titular habla claramente de ellas
-SECCIONES_ESTRICTAS = ('pesca', 'industria')
+SECCIONES_ESTRICTAS = ('industria',)
+
+# Pestañas por comunidad. La primera es Nacional; el resto son noticias locales
+# obtenidas de Google News RSS (fuente pública, sin clave de API).
+REGIONES = [
+    {'id': 'nacional',            'nombre': 'Nacional'},
+    {'id': 'andalucia',           'nombre': 'Andalucía'},
+    {'id': 'aragon',              'nombre': 'Aragón'},
+    {'id': 'asturias',            'nombre': 'Asturias'},
+    {'id': 'cantabria',           'nombre': 'Cantabria'},
+    {'id': 'castilla-leon',       'nombre': 'Castilla y León'},
+    {'id': 'castilla-la-mancha',  'nombre': 'Castilla-La Mancha'},
+    {'id': 'cataluna',            'nombre': 'Cataluña'},
+    {'id': 'comunidad-valenciana','nombre': 'Comunidad Valenciana'},
+    {'id': 'extremadura',         'nombre': 'Extremadura'},
+    {'id': 'galicia',             'nombre': 'Galicia'},
+    {'id': 'islas-baleares',      'nombre': 'Islas Baleares'},
+    {'id': 'islas-canarias',      'nombre': 'Islas Canarias'},
+    {'id': 'la-rioja',            'nombre': 'La Rioja'},
+    {'id': 'madrid',              'nombre': 'Madrid'},
+    {'id': 'murcia',              'nombre': 'Murcia'},
+    {'id': 'navarra',             'nombre': 'Navarra'},
+    {'id': 'pais-vasco',          'nombre': 'País Vasco'},
+]
+GOOGLE_NEWS = 'https://news.google.com/rss/search?q={q}&hl=es&gl=ES&ceid=ES:es'
 
 # Detección de tema por palabras del titular, para no etiquetar mal una noticia
 DETECTAR = [
@@ -286,6 +304,7 @@ def parsear_feed(url, sec, keywords, fallback):
         salida.append({
             'id': id_para(link),
             'sec': sec_final,
+            'region': 'nacional',
             'slot': 0,
             'titulo': titulo,
             'entradilla': entradilla,
@@ -298,6 +317,52 @@ def parsear_feed(url, sec, keywords, fallback):
             'viral': 0,
             '_score': score,
             '_imgurl': imagen_de(item),
+            '_fuentes': 1,
+        })
+    return salida
+
+
+def parsear_feed_region(url, region, nombre_region):
+    """Noticias locales de una comunidad desde Google News RSS."""
+    salida = []
+    try:
+        texto = fetch(url).decode('utf-8', 'ignore')
+        texto = ''.join(c for c in texto if ord(c) > 31 or c in '\n\r\t')
+        root = ET.fromstring(texto.encode('utf-8'))
+    except Exception as e:
+        log(f'  ! feed regional {nombre_region}: {str(e)[:100]}')
+        return salida
+
+    for item in root.findall('.//item'):
+        titulo = limpiar(hijo_texto(item, 'title'), 180)
+        link = hijo_texto(item, 'link')
+        if not titulo or not link:
+            continue
+        fuente = item.find('source')
+        medio = limpiar(fuente.text, 60) if fuente is not None and fuente.text else ''
+        if medio and titulo.endswith(' - ' + medio):
+            titulo = titulo[:-(len(medio) + 3)].strip()
+        detectada = detectar_categoria(titulo)
+        salida.append({
+            'id': id_para(link),
+            'sec': detectada or 'sociedad',
+            'region': region,
+            'slot': 0,
+            'titulo': titulo,
+            'entradilla': f'Actualidad de {nombre_region} · {medio}' if medio
+                          else f'Actualidad de {nombre_region}',
+            'cuerpo': [f'Noticia publicada por {medio}. Consulta el artículo original '
+                       f'en {medio} para más información.' if medio else
+                       'Consulta el artículo original para más información.'],
+            'autor': 'Redacción',
+            'fecha': fecha_de(item),
+            'image': '',
+            'link': link,
+            'medio': medio or 'Google News',
+            'viral': 0,
+            '_detectada': bool(detectada),
+            '_score': 0,
+            '_imgurl': '',
             '_fuentes': 1,
         })
     return salida
@@ -333,7 +398,12 @@ def calcular_viral(n, menciones, ahora):
 def cargar_historico():
     if HISTORICO.exists():
         try:
-            return json.loads(HISTORICO.read_text(encoding='utf-8'))
+            datos = json.loads(HISTORICO.read_text(encoding='utf-8'))
+            for n in datos.get('noticias', []):
+                n.setdefault('region', 'nacional')
+                if 'lavozdegalicia' in (n.get('medio') or ''):
+                    n['region'] = 'galicia'
+            return datos
         except Exception as e:
             log(f'! histórico corrupto, se empieza de cero: {e}')
     return {'actualizado': '', 'noticias': [], 'top': []}
@@ -365,6 +435,7 @@ def cargar_manuales():
         salida.append({
             'id': idn,
             'sec': sec,
+            'region': m.get('region') or 'nacional',
             'slot': 0,
             'titulo': titulo,
             'entradilla': limpiar(m.get('entradilla', ''), 240) or titulo,
@@ -393,6 +464,7 @@ def jstr(s):
 def generar_js(historico):
     JS.parent.mkdir(parents=True, exist_ok=True)
     secciones_js = ',\n'.join('  ' + json.dumps(s, ensure_ascii=False) for s in SECCIONES)
+    regiones_js = ',\n'.join('  ' + json.dumps(r, ensure_ascii=False) for r in REGIONES)
     lines = [
         '/* ============================================================',
         '   TU VECINA COTILLA — Banco de noticias',
@@ -406,9 +478,14 @@ def generar_js(historico):
         secciones_js,
         '];',
         '',
+        'const REGIONES = [',
+        regiones_js,
+        '];',
+        '',
         "const A = (id, sec, slot, titulo, entradilla, cuerpo, autor = 'Redacción',",
-        "          fecha = '', image = '', link = '', medio = '', viral = 0) => ({",
-        '  id, sec, slot, titulo, entradilla, cuerpo, autor, fecha, image, link, medio, viral',
+        "          fecha = '', image = '', link = '', medio = '', viral = 0,",
+        "          region = 'nacional') => ({",
+        '  id, sec, slot, titulo, entradilla, cuerpo, autor, fecha, image, link, medio, viral, region',
         '});',
         '',
         'const NOTICIAS = [',
@@ -424,7 +501,8 @@ def generar_js(historico):
                 f"{jstr(n['titulo'])}, {jstr(n['entradilla'])}, "
                 f"[{cuerpo}], {jstr(n.get('autor'))}, {jstr(n.get('fecha'))}, "
                 f"{jstr(n.get('image'))}, {jstr(n.get('link'))}, "
-                f"{jstr(n.get('medio'))}, {n.get('viral', 0)}),"
+                f"{jstr(n.get('medio'))}, {n.get('viral', 0)}, "
+                f"{jstr(n.get('region', 'nacional'))}),"
             )
     lines += ['];', '']
     JS.write_text('\n'.join(lines), encoding='utf-8')
@@ -459,6 +537,7 @@ def main():
 
     corte = (ahora - timedelta(days=DIAS_HISTORICO)).isoformat()
     noticias = [n for n in noticias if n.get('fecha', '') >= corte]
+    noticias = [n for n in noticias if n.get('sec') != 'pesca']  # sección eliminada
     existentes = {n['id']: n for n in noticias}
 
     # 1) Recoger candidatos de todos los feeds, sin duplicados por enlace
@@ -482,6 +561,32 @@ def main():
                     pool[clave] = n
         log(f'{sec:11} -> {len([v for v in pool.values() if v["sec"] == sec]):2} candidatos únicos')
 
+    # 1b) Noticias locales de cada comunidad (Google News RSS)
+    for reg in REGIONES[1:]:
+        url = GOOGLE_NEWS.format(q=quote(reg['nombre'] + ' when:7d'))
+        candidatos = parsear_feed_region(url, reg['id'], reg['nombre'])
+        candidatos.sort(key=lambda n: n['fecha'], reverse=True)
+        candidatos = candidatos[:MAX_POR_REGION]
+        por_sec = {s['id']: [] for s in SECCIONES}
+        sin_sec = []
+        for n in candidatos:
+            if n.get('_detectada'):
+                por_sec[n['sec']].append(n)
+            else:
+                sin_sec.append(n)
+        # Repartir el resto para que cada sección tenga hasta 3 noticias
+        for s in SECCIONES:
+            while len(por_sec[s['id']]) < 3 and sin_sec:
+                por_sec[s['id']].append(sin_sec.pop(0))
+        for items in por_sec.values():
+            for n in items:
+                clave = normalizar_link(n['link'])
+                if clave not in pool:
+                    n['_clave'] = clave
+                    pool[clave] = n
+        total_reg = len([v for v in pool.values() if v['region'] == reg['id']])
+        log(f'{reg["nombre"][:22]:22} -> {total_reg:2} candidatos únicos')
+
     # 2) Descargar imagen de los candidatos nuevos
     restantes = [MAX_IMAGENES]
     nuevas = 0
@@ -491,7 +596,9 @@ def main():
             n['image'] = antiguo['image']
             continue
         if restantes[0] > 0:
-            url = n['_imgurl'] or og_image(n['link'])
+            url = n['_imgurl']
+            if not url and n.get('region', 'nacional') == 'nacional':
+                url = og_image(n['link'])
             if url:
                 n['image'] = descargar_imagen(url, n['id'])
                 if n['image']:

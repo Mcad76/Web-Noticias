@@ -8,16 +8,17 @@ actualizado íntegramente desde GitHub:
 
 El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 
-- `actualizar_noticias.py` descarga noticias reales de fuentes RSS públicas
-  (El País y La Voz de Galicia, configurables en `FUENTES`).
+- `actualizar_noticias.py` descarga noticias reales de fuentes RSS públicas:
+  **El País** para la pestaña Nacional y **Google News RSS** para cada
+  comunidad autónoma (configurable en `FUENTES` y `REGIONES`).
 - **Deduplicación global**: un mismo artículo se publica una sola vez, aunque
   aparezca en varios feeds o encaje en varias secciones.
 - **Portada por categorías**: cada sección muestra sus **3 noticias más
   recientes y relevantes**. La relevancia combina frescura, presencia en varias
   fuentes y peso del titular. No hay números ni ranking visible.
-- **Clasificación estricta**: Pesca e Industria solo se aplican si el titular
-  habla claramente de ello; si no, la noticia pasa a su sección real (por
-  ejemplo, una noticia del 5G va a Tecnología, no a Pesca).
+- **Clasificación estricta**: Industria solo se aplica si el titular habla
+  claramente de ello; si no, la noticia pasa a su sección real (por ejemplo,
+  una noticia del 5G va a Tecnología, no a Industria).
 - Extrae de cada noticia su **imagen original**, la guarda en `imagenes/` y la
   muestra en la tarjeta y en el artículo ampliado.
 - Reescribe `js/news-data.js` con titular, entradilla, cuerpo, autor, fecha real
@@ -27,8 +28,10 @@ El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 
 ## Portada y publicidad
 
-- Frase superior: **«TODOS LOS PERIÓDICOS EN UNO · ÚLTIMA ACTUALIDAD»**.
-- Fila de **accesos directos** a las 8 categorías justo bajo la cabecera.
+- **Pestañas por comunidad**: Nacional, Andalucía, Aragón, … País Vasco. Cada
+  pestaña aplica el mismo criterio (3 noticias por sección, archivo y ticker)
+  pero solo con noticias de esa comunidad.
+- Fila de **accesos directos** a las 7 categorías justo bajo la cabecera.
 - Categorías con 3 noticias cada una; la **categoría aparece en una fila de
   color encima de la foto**, no superpuesta a la imagen.
 - Tres huecos de publicidad: cabecera, entre secciones y pie de página, con el
@@ -125,7 +128,8 @@ y abre `http://localhost:8899` en el navegador.
 
 ## Secciones
 
-Industria, Política, Deportes, Sociedad, Pesca, Tecnología, Economía y Cultura.
+Industria, Política, Deportes, Sociedad, Tecnología, Economía y Cultura.
 Cada día se muestran hasta 3 noticias recientes y relevantes por sección; el
 resto queda consultable en el archivo, con filtro, buscador y fecha real de
-publicación.
+publicación. Las pestañas por comunidad (Nacional + 17 comunidades) aplican
+el mismo criterio a sus propias noticias.

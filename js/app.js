@@ -9,6 +9,7 @@
 const MS_DIA = 86400000;
 const ANCLAJE = new Date(2026, 0, 1); // Referencia fija para la rotación
 const HOY = new Date();
+let regionActual = 'nacional';
 
 /* ---------- Utilidades de fecha ---------- */
 function inicioDelDia(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
@@ -34,9 +35,10 @@ function tieneFechaReal(n) {
   return !!(n.fecha && !isNaN(new Date(n.fecha).getTime()));
 }
 
-function noticiasDeHoy(idxSeccion) {
+function noticiasDeHoy(idxSeccion, region = regionActual) {
   const sec = SECCIONES[idxSeccion];
-  const lista = NOTICIAS.filter(n => n.sec === sec.id);
+  const lista = NOTICIAS.filter(n => n.sec === sec.id &&
+    (n.region || 'nacional') === region);
   // Las más recientes y relevantes de cada categoría
   const reales = lista.filter(tieneFechaReal).sort((a, b) =>
     (b.viral || 0) - (a.viral || 0) || new Date(b.fecha) - new Date(a.fecha));
@@ -63,8 +65,12 @@ NOTICIAS.forEach(n => {
     ? new Date(n.fecha)
     : fechaPublicacion(n, indiceSeccion(n.sec));
 });
-const IDS_HOY = new Set();
-SECCIONES.forEach((_, i) => noticiasDeHoy(i).forEach(n => IDS_HOY.add(n.id)));
+let IDS_HOY = new Set();
+function actualizarIdsHoy() {
+  IDS_HOY = new Set();
+  SECCIONES.forEach((_, i) => noticiasDeHoy(i).forEach(n => IDS_HOY.add(n.id)));
+}
+actualizarIdsHoy();
 
 function minutosLectura(articulo) {
   const palabras = (articulo.entradilla + ' ' + articulo.cuerpo.join(' ')).split(/\s+/).length;
@@ -119,6 +125,12 @@ const AD_HTML = '<aside class="ad ad--inline"><span class="ad__label">PUBLICIDAD
 
 /* ---------- Navegación, accesos rápidos y ticker ---------- */
 function construirNavegacion() {
+  const tabs = document.getElementById('tabs-regiones');
+  if (tabs && typeof REGIONES !== 'undefined') {
+    tabs.innerHTML = REGIONES.map(r =>
+      `<button type="button" data-region="${r.id}" class="${r.id === regionActual ? 'activa' : ''}">${r.nombre}</button>`
+    ).join('');
+  }
   const nav = document.getElementById('nav-secciones');
   const accesos = document.getElementById('accesos-rapidos');
   const selector = document.getElementById('archivo-seccion');
@@ -138,16 +150,19 @@ function construirNavegacion() {
 }
 
 function construirTicker() {
-  const titulares = NOTICIAS.filter(tieneFechaReal)
+  const titulares = NOTICIAS.filter(n => tieneFechaReal(n) &&
+      (n.region || 'nacional') === regionActual)
     .sort((a, b) => (b.viral || 0) - (a.viral || 0) || new Date(b.fecha) - new Date(a.fecha))
     .slice(0, 6)
-    .map(n => `<span>🔥 ${n.titulo}</span>`).join('');
+    .map(n => `<span data-id="${n.id}" role="button" tabindex="0" aria-label="Leer noticia: ${n.titulo}">🔥 ${n.titulo}</span>`)
+    .join('');
   document.getElementById('ticker-track').innerHTML = titulares + titulares; // duplicado para bucle continuo
 }
 
 /* ---------- Secciones temáticas ---------- */
 function construirSecciones() {
   const contenedor = document.getElementById('secciones');
+  contenedor.innerHTML = '';
   SECCIONES.forEach((sec, idx) => {
     const noticias = noticiasDeHoy(idx);
     const bloque = document.createElement('section');
@@ -183,6 +198,7 @@ function construirArchivo() {
     return dif !== 0 ? dif : a.slot - b.slot;
   });
 
+  noticias = noticias.filter(n => (n.region || 'nacional') === regionActual);
   if (seccion !== 'todas') noticias = noticias.filter(n => n.sec === seccion);
   if (buscar) noticias = noticias.filter(n =>
     (n.titulo + ' ' + n.entradilla + ' ' + n.cuerpo.join(' ')).toLowerCase().includes(buscar));
@@ -221,7 +237,8 @@ function abrirNoticia(id) {
   const f = FECHAS_PUBLICACION[n.id];
 
   const relacionadas = NOTICIAS
-    .filter(x => x.sec === n.sec && x.id !== n.id)
+    .filter(x => x.sec === n.sec && x.id !== n.id &&
+      (x.region || 'nacional') === (n.region || 'nacional'))
     .sort((a, b) => (IDS_HOY.has(b.id) ? 1 : 0) - (IDS_HOY.has(a.id) ? 1 : 0))
     .slice(0, 2);
 
@@ -321,6 +338,19 @@ document.addEventListener('keydown', (e) => {
     alternarMenu(false);
     menuBtn.focus();
   }
+});
+
+/* ---------- Pestañas por comunidad ---------- */
+document.getElementById('tabs-regiones').addEventListener('click', (e) => {
+  const boton = e.target.closest('button[data-region]');
+  if (!boton || boton.dataset.region === regionActual) return;
+  regionActual = boton.dataset.region;
+  document.querySelectorAll('#tabs-regiones button').forEach(b =>
+    b.classList.toggle('activa', b === boton));
+  actualizarIdsHoy();
+  construirTicker();
+  construirSecciones();
+  construirArchivo();
 });
 
 /* ---------- Inicio ---------- */
