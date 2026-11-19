@@ -120,9 +120,6 @@ function tarjetaHTML(noticia, variante = '') {
   </article>`;
 }
 
-/* ---------- Espacios publicitarios ---------- */
-const AD_HTML = '<aside class="ad ad--inline"><span class="ad__label">PUBLICIDAD</span><strong>PON AQUÍ TU PUBLICIDAD</strong><span class="ad__small">¿Quieres destacar aquí? Escríbenos</span></aside>';
-
 /* ---------- Navegación, accesos rápidos y ticker ---------- */
 function construirNavegacion() {
   const tabs = document.getElementById('tabs-regiones');
@@ -183,7 +180,6 @@ function construirSecciones() {
         ${contenido}
       </div>`;
     contenedor.appendChild(bloque);
-    if (idx === 3) contenedor.insertAdjacentHTML('beforeend', AD_HTML);
   });
 }
 

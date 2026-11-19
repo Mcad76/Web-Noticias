@@ -636,49 +636,8 @@ button, input, select { font-family: inherit; }
 @media (max-width: 700px) { .footer__inner { grid-template-columns: 1fr; } .footer__copy { text-align: left; } }
 
 /* ============================================================
-   TOP 10 DEL DÍA — portada visual y publicidad
+   TOP 10 DEL DÍA — portada visual
    ============================================================ */
-
-/* ---------- Espacios publicitarios ---------- */
-.ad {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  background: repeating-linear-gradient(45deg, #fffdf5, #fffdf5 14px, #fff8e1 14px, #fff8e1 28px);
-  border: 2px dashed #f0b429;
-  color: #8a6100;
-  text-align: center;
-  padding: 14px;
-  overflow: hidden;
-}
-.ad__label {
-  font-family: var(--fuente-tit);
-  font-size: 10px;
-  letter-spacing: .28em;
-  color: #b8860b;
-}
-.ad strong {
-  font-family: var(--fuente-tit);
-  font-size: clamp(15px, 2.4vw, 24px);
-  letter-spacing: .03em;
-  text-transform: uppercase;
-}
-.ad__small { font-size: 11px; opacity: .8; }
-.ad--banner { margin: 10px auto 0; width: min(1000px, 94vw); min-height: 90px; border-radius: 6px; }
-.ad--inline {
-  grid-column: 1 / -1;
-  min-height: 110px;
-  margin: 24px auto;
-  width: min(1000px, 94vw);
-  border-radius: 6px;
-  border-color: var(--rojo);
-  color: var(--rojo-osc);
-  background: repeating-linear-gradient(45deg, #fff, #fff 14px, #fff0f1 14px, #fff0f1 28px);
-}
-.ad--footer { margin: 24px auto; width: min(1000px, 94vw); min-height: 100px; border-radius: 6px; }
 
 /* ---------- Portada ---------- */
 .bloque--top { background: linear-gradient(180deg, #fff9f9 0%, var(--gris) 130px); padding-top: 22px; }
@@ -880,5 +839,4 @@ button, input, select { font-family: inherit; }
   .top-card { grid-template-columns: 46px minmax(0, 1fr); }
   .top-card__num { font-size: 32px; }
   .top-card--caliente .top-card__num { font-size: 38px; }
-  .ad--banner, .ad--footer { min-height: 76px; }
 }

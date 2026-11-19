@@ -28,7 +28,7 @@ El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 - Cada imagen se redimensiona a 1000×640 y se comprime para no llenar el móvil.
 - El histórico se guarda en `datos/historico.json` (máximo 240 noticias y 30 días).
 
-## Portada y publicidad
+## Portada
 
 - **Pestañas por comunidad**: Nacional, Andalucía, Aragón, … País Vasco. Cada
   pestaña aplica el mismo criterio (3 noticias por sección, archivo y ticker)
@@ -36,8 +36,6 @@ El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 - Fila de **accesos directos** a las 7 categorías justo bajo la cabecera.
 - Categorías con 3 noticias cada una; la **categoría aparece en una fila de
   color encima de la foto**, no superpuesta a la imagen.
-- Tres huecos de publicidad: cabecera, entre secciones y pie de página, con el
-  texto «PON AQUÍ TU PUBLICIDAD».
 - Archivo con filtro, buscador y fecha real de publicación.
 
 ## Actualización automática (todo en GitHub, sin Termux)
