@@ -45,7 +45,10 @@ El portal ya **no depende del móvil**. Un GitHub Action hace el trabajo en la n
 - `.github/workflows/actualizar-noticias.yml` ejecuta `actualizar_noticias.py`
   cada día a las **07:30 UTC** y también bajo demanda.
 - El Action instala `Pillow` desde `requirements.txt`, descarga las noticias y
-  hace `commit` de `js/news-data.js`, `datos/historico.json` y `imagenes/`.
+  hace `commit` de `js/news-data.js`, `datos/historico.json`, `imagenes/`,
+  `noticias/` (página real de cada noticia), `sitemap.xml` y `robots.txt`.
+  Es imprescindible versionar `noticias/`: si no, los enlaces de las tarjetas
+  apuntan a páginas que no existen y al pulsar una noticia sale un 404.
 - Para actualizar **cuando quieras**: entra en la pestaña **Actions** del repo,
   elige *Actualizar noticias* y pulsa **Run workflow**.
 - Para publicar la web: **Settings → Pages → Source: Deploy from a branch →
