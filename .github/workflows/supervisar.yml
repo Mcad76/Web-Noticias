@@ -1,0 +1,57 @@
+name: Supervisor de noticias
+
+# Revisa cada día, después de la actualización de las 06:00 UTC, que todo esté bien.
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: supervisor-vecina-cotilla
+  cancel-in-progress: false
+
+jobs:
+  supervisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Comprobar que la actualización de hoy se ejecutó bien
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN=$(gh api "repos/${{ github.repository }}/actions/workflows/actualizar-noticias.yml/runs?per_page=1" \
+            --jq '.workflow_runs[0] | [.created_at, .conclusion] | @tsv')
+          echo "Última actualización: $RUN"
+          FECHA=$(echo "$RUN" | cut -f1 | cut -c1-10)
+          CONCLUSION=$(echo "$RUN" | cut -f2)
+          HOY=$(date -u +%Y-%m-%d)
+          if [ "$FECHA" != "$HOY" ]; then
+            echo "FALLO: la actualización no se ha ejecutado hoy ($HOY)"
+            exit 1
+          fi
+          if [ "$CONCLUSION" != "success" ]; then
+            echo "FALLO: la última actualización terminó en $CONCLUSION"
+            exit 1
+          fi
+          echo "OK: actualización de hoy correcta"
+
+      - name: Revisar datos, fotos, páginas y enlaces
+        run: python3 supervisar.py

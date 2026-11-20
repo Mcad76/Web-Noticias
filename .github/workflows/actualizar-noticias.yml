@@ -3,9 +3,9 @@ name: Actualizar noticias
 # Se ejecuta solo en GitHub (nada de cron en el móvil).
 on:
   schedule:
-    # Todos los días a las 07:30 UTC (= 08:30 en España en invierno, 09:30 en verano).
+    # Todos los días a las 06:00 UTC. El supervisor revisa el resultado a las 07:00 UTC.
     # GitHub puede retrasar un poco la ejecución; para forzarla usa el botón manual.
-    - cron: '30 7 * * *'
+    - cron: '0 6 * * *'
   # Botón "Run workflow" en la pestaña Actions, para actualizar cuando quieras.
   workflow_dispatch:
 
