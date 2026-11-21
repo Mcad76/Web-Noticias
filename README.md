@@ -52,7 +52,7 @@ El portal ya **no depende del móvil**. Un GitHub Action hace el trabajo en la n
   `noticias/` (página real de cada noticia), `sitemap.xml` y `robots.txt`.
   Es imprescindible versionar `noticias/`: si no, los enlaces de las tarjetas
   apuntan a páginas que no existen y al pulsar una noticia sale un 404.
-- `.github/workflows/supervisar.yml` + `supervisar.py` revisan a las **07:00 y 16:00 hora de España**
+- `.github/workflows/supervisar.yml` + `supervisar.py` revisan a las **06:10 y 15:10 hora de España**
   que la actualización del día se ejecutó, que hay fotos, que `news-data.js`
   coincide con el histórico, que **todas las páginas responden por HTTP** y que
   no han vuelto los huecos de publicidad. Si algo falla, el workflow queda en rojo.
