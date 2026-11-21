@@ -1,9 +1,10 @@
 name: Supervisor de noticias
 
-# Revisa cada día tras las actualizaciones de las 06:00 y 15:00 UTC (07:00 y 16:00 UTC).
+# 07:00 y 16:00 en España. Como GitHub solo entiende UTC, se programan los cuatro
+# horarios UTC posibles y un guardia filtra la hora local (horario de verano/invierno).
 on:
   schedule:
-    - cron: '0 7,16 * * *'
+    - cron: '0 5,6,14,15 * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +34,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Comprobar hora en España
+        id: hora
+        run: |
+          HORA=$(TZ=Europe/Madrid date +%H)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$HORA" = "07" ] || [ "$HORA" = "16" ]; then
+            echo "ejecutar=true" >> "$GITHUB_OUTPUT"
+            echo "Son las $HORA en España: revisando."
+          else
+            echo "ejecutar=false" >> "$GITHUB_OUTPUT"
+            echo "Son las $HORA en España: se omite."
+          fi
+
       - name: Comprobar que la actualización de hoy se ejecutó bien
+        if: steps.hora.outputs.ejecutar == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -54,4 +68,5 @@ jobs:
           echo "OK: actualización de hoy correcta"
 
       - name: Revisar datos, fotos, páginas y enlaces
+        if: steps.hora.outputs.ejecutar == 'true'
         run: python3 supervisar.py

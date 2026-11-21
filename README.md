@@ -43,13 +43,16 @@ El portal ya **no usa noticias de demostración ni fotos genéricas de Picsum**.
 El portal ya **no depende del móvil**. Un GitHub Action hace el trabajo en la nube:
 
 - `.github/workflows/actualizar-noticias.yml` ejecuta `actualizar_noticias.py`
-  cada día a las **06:00 y 15:00 UTC** y también bajo demanda.
+  cada día a las **06:00 y 15:00 hora de España** y también bajo demanda.
+  GitHub Actions solo entiende UTC, así que se programan los cuatro horarios UTC
+  posibles y un guardia con `TZ=Europe/Madrid` deja actuar solo a la hora local
+  correcta: funciona igual en invierno (CET) y en verano (CEST).
 - El Action instala `Pillow` desde `requirements.txt`, descarga las noticias y
   hace `commit` de `js/news-data.js`, `datos/historico.json`, `imagenes/`,
   `noticias/` (página real de cada noticia), `sitemap.xml` y `robots.txt`.
   Es imprescindible versionar `noticias/`: si no, los enlaces de las tarjetas
   apuntan a páginas que no existen y al pulsar una noticia sale un 404.
-- `.github/workflows/supervisar.yml` + `supervisar.py` revisan a las **07:00 y 16:00 UTC**
+- `.github/workflows/supervisar.yml` + `supervisar.py` revisan a las **07:00 y 16:00 hora de España**
   que la actualización del día se ejecutó, que hay fotos, que `news-data.js`
   coincide con el histórico, que **todas las páginas responden por HTTP** y que
   no han vuelto los huecos de publicidad. Si algo falla, el workflow queda en rojo.
