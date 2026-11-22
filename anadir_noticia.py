@@ -67,6 +67,21 @@ def leer_metadatos(url):
     return parser.datos
 
 
+def imagen_local_respaldo(ident, texto):
+    """Crea una imagen propia si la fuente no trae foto (la web exige imagen)."""
+    from PIL import Image, ImageDraw
+
+    imagen = Image.new('RGB', (1000, 560), (24, 34, 48))
+    dibujo = ImageDraw.Draw(imagen)
+    dibujo.rectangle([0, 0, 1000, 12], fill=(255, 138, 61))
+    dibujo.text((44, 250), 'MCad Hub', fill=(255, 255, 255))
+    dibujo.text((44, 285), gen.limpiar(texto, 60), fill=(170, 190, 210))
+    destino = gen.IMGS / f'{ident}.jpg'
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    imagen.save(destino, 'JPEG', quality=82, optimize=True)
+    return 'imagenes/' + ident + '.jpg'
+
+
 def principal():
     url = os.environ.get('INPUT_URL', '').strip()
     if not url.startswith(('http://', 'https://')):
@@ -113,6 +128,8 @@ def principal():
             imagen = gen.imagen_respaldo(seccion if es_anime else titulo)
         except Exception:
             imagen = ''
+    if not imagen:
+        imagen = imagen_local_respaldo(ident, titulo)
 
     entrada = {
         'id': ident,
