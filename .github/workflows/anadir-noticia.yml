@@ -1,0 +1,84 @@
+name: Añadir noticia desde enlace
+
+# Lo dispara MCad Hub con un workflow_dispatch. Lee el enlace, extrae título,
+# foto y resumen, lo guarda en datos/noticias-manuales.json y regenera la web.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Enlace de la noticia'
+        required: true
+        type: string
+      titulo:
+        description: 'Título (vacío = detectar del enlace)'
+        required: false
+        type: string
+        default: ''
+      entradilla:
+        description: 'Resumen (vacío = detectar del enlace)'
+        required: false
+        type: string
+        default: ''
+      seccion:
+        description: 'Sección (sociedad / estrenos / ...)'
+        required: false
+        type: string
+        default: ''
+      extra:
+        description: 'Región o género (nacional / todos / ...)'
+        required: false
+        type: string
+        default: ''
+      autor:
+        description: 'Autor'
+        required: false
+        type: string
+        default: 'MCad'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: anadir-noticia-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  anadir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Añadir noticia y regenerar portal
+        env:
+          INPUT_URL: ${{ inputs.url }}
+          INPUT_TITULO: ${{ inputs.titulo }}
+          INPUT_ENTRADILLA: ${{ inputs.entradilla }}
+          INPUT_SECCION: ${{ inputs.seccion }}
+          INPUT_EXTRA: ${{ inputs.extra }}
+          INPUT_AUTOR: ${{ inputs.autor }}
+        run: python anadir_noticia.py
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "Mcad76"
+          git config user.email "Mcad76@users.noreply.github.com"
+          git add datos/noticias-manuales.json datos/historico.json js/news-data.js imagenes noticias sitemap.xml robots.txt
+          if git diff --cached --quiet; then
+            echo "Sin cambios que guardar"
+          else
+            git commit -m "Añadir noticia desde enlace (MCad Hub)"
+            git push origin HEAD:main
+          fi
