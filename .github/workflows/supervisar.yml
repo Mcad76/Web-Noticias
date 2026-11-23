@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 concurrency:
@@ -70,3 +70,21 @@ jobs:
       - name: Revisar datos, fotos, páginas y enlaces
         if: steps.hora.outputs.ejecutar == 'true'
         run: python3 supervisar.py
+
+      - name: Publicar informe para MCad Hub
+        if: always() && steps.hora.outputs.ejecutar == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -f datos/supervision.json || exit 0
+          CONTENIDO=$(base64 -w0 datos/supervision.json)
+          SHA=$(gh api "repos/${{ github.repository }}/contents/datos/supervision.json" --jq .sha 2>/dev/null || true)
+          if [ -n "$SHA" ]; then
+            gh api -X PUT "repos/${{ github.repository }}/contents/datos/supervision.json" \
+              -f message="Actualizar informe del supervisor" \
+              -f content="$CONTENIDO" -f sha="$SHA" -f branch=main
+          else
+            gh api -X PUT "repos/${{ github.repository }}/contents/datos/supervision.json" \
+              -f message="Crear informe del supervisor" \
+              -f content="$CONTENIDO" -f branch=main
+          fi
