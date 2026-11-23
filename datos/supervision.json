@@ -1,0 +1,19 @@
+{
+  "revisado": "2026-11-23T08:25:54.355145+00:00",
+  "resultado": "ok",
+  "portal": "Tu Vecina Cotilla",
+  "actualizado": "2026-11-23T08:11:28.466915+00:00",
+  "actualizacion_hoy": true,
+  "noticias": 628,
+  "con_imagen": 628,
+  "sin_imagen": 0,
+  "imagenes_ausentes": 0,
+  "paginas": 628,
+  "enlaces": {
+    "total": 628,
+    "fallidos": 0,
+    "ejemplos": []
+  },
+  "errores": [],
+  "avisos": []
+}
