@@ -656,7 +656,7 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
             '  <script type="application/ld+json">' + ld_json + '</script>',
             '  <link rel="stylesheet" href="../css/styles.css">',
             estilos,
-            '</head>', '<body>',
+            '</head>', f'<body data-seccion="{e(n["sec"], quote=True)}">',
             '  <div class="cabecera"><a href="../index.html">Tu Vecina Cotilla — Inicio</a></div>',
             '  <article class="articulo">',
             f'    <span class="seccion" style="background:{color}">{e(nombre_sec)}</span>',
@@ -712,6 +712,7 @@ img.portada{width:100%;max-width:100%;height:auto;display:block;margin:0 0 24px}
             '    <a class="volver" href="../index.html">← Volver a la portada</a>',
             '  </article>',
             '  <div class="pie">Tu Vecina Cotilla · Noticias de fuentes públicas RSS</div>',
+            '  <script src="../js/analitica.js?v=1"></script>',
             '</body>', '</html>',
         ]
         (carpeta / nombre).write_text('\n'.join(pagina), encoding='utf-8')
